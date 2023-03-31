@@ -23,11 +23,11 @@
   <div id="app">
 
 
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-expand-md ">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
           <div class="logo_laravel">
-            <img src="https://www.panevino.pub/wp-content/uploads/2021/02/deliveroo.png" class="logo">
+            <img src="https://avatars.githubusercontent.com/u/10514109?s=280&v=4" class="logo">
           </div>
           {{-- config('app.name', 'Laravel') --}}
         </a>
@@ -40,13 +40,17 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Left Side Of Navbar -->
           <ul class="navbar-nav me-auto">
+            
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('/') }}">{{ __('Boolivero') }}</a>
+              <a class="link" href="{{ url('/') }}">{{ __('Boolivero') }}</a>
             </li>
           </ul>
 
           <!-- Right Side Of Navbar -->
           <ul class="navbar-nav ml-auto">
+            <li>
+              <h2>Logout</h2>
+            </li>
             <!-- Authentication Links -->
             @guest
               <li class="nav-item">
