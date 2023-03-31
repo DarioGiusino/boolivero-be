@@ -89,8 +89,13 @@
       </div>
     </nav>
 
-    <main class="">
-      @yield('content')
+    <main class="d-flex flex-column flex-md-row-reverse">
+      <div class="flex-grow-1" style="border: 1px solid green">
+        {{-- @yield('content') --}}
+      </div>
+      <div class="fb-10-md-20" style="border: 1px solid purple">
+        {{-- @yield('sidebar') --}}
+      </div>
     </main>
   </div>
 </body>
