@@ -93,7 +93,7 @@
     </nav>
 
     <main class="d-flex flex-column flex-md-row-reverse">
-      <div class="flex-grow-1" style="border: 1px solid green">
+      <div class="flex-grow-1">
         @yield('content')
       </div>
       <div class="fb-10-md-20">
