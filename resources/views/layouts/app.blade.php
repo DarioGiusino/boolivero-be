@@ -45,45 +45,58 @@
           <ul class="navbar-nav me-auto">
             
             <li class="nav-item">
-              <a class="link" href="{{ url('/') }}">{{ __('Boolivero') }}</a>
+              <a class="text-link" href="{{ url('/') }}">{{ __('Boolivero') }}</a>
             </li>
           </ul>
 
           <!-- Right Side Of Navbar -->
-          <ul class="navbar-nav ml-auto">
-            <li>
-              <h2>Logout</h2>
-            </li>
+          <ul class="navbar-nav ml-auto d-flex align-items-center">
+            
             <!-- Authentication Links -->
             @guest
               <li class="nav-item">
-                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                <a class="nav-link text-light" href="{{ route('login') }}">{{ __('Login') }}</a>
               </li>
               @if (Route::has('register'))
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                  <a class="nav-link text-light" href="{{ route('register') }}">{{ __('Register') }}</a>
                 </li>
               @endif
             @else
-              <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+            <li class="link">
+              <a class="one-link mx-1" href="('#')">Torna a ordinare</a>
+              <a class="one-link" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+              </a>
+            </li>
+              <li class="dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle p-0 mx-3 text-light" href="#" role="button"
                   data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                   {{ Auth::user()->name }}
                 </a>
+                
 
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu dropdown-menu-right text-light" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{ route('admin.home') }}">{{ __('Dashboard') }}</a>
                   <a class="dropdown-item" href="{{ url('profile') }}">{{ __('Profile') }}</a>
                   <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                    document.getElementById('logout-form').submit();">
                     {{ __('Logout') }}
                   </a>
-
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                   </form>
                 </div>
+              </li>
+              <li>
+                <div class="media">
+                  <figure>
+                    <img class="rounded-circle mt-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp03ufSRfn7HaHhshFyqzmGCWQjh_LozvMRA&usqp=CAU" alt="user.name" />
+                  </figure>
+                  </div>
               </li>
             @endguest
           </ul>

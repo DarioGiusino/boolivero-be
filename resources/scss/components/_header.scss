@@ -2,12 +2,23 @@
     background-color: $light_green;
 }
 
-.logo {
-    width: 50px;
+img {
+    width: 40px;
+}
+
+.text-link {
+    display: inline;
+    font-size: larger;
+    margin-top: 0.3rem;
+    color: white;
+    text-decoration: none;
 }
 
 .link {
-    font-size: larger;
-    color: white;
-    text-decoration: none;
+
+    .one-link {
+        font-size: medium;
+        color: white;
+        text-decoration: none;
+    }
 }
