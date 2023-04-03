@@ -20,4 +20,10 @@ class Food extends Model
     {
         return $this->belongsTo(Restaurant::class);
     }
+
+    //get abstract
+    public function getAbstract()
+    {
+        return substr($this->description, 0, 20) . '...';
+    }
 }

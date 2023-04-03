@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Food;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FoodController extends Controller
 {
@@ -12,7 +14,9 @@ class FoodController extends Controller
      */
     public function index()
     {
-        return view('admin.foods.index');
+        $restaurant_id = Auth::id();
+        $foods = Food::orderBy('updated_at', 'DESC')->where('restaurant_id', $restaurant_id)->get();
+        return view('admin.foods.index', compact('foods'));
     }
 
     /**
