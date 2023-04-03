@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Restaurant extends Model
 {
     use HasFactory;
-    public function User()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
-    public function Categories()
+    public function categories()
     {
         return $this->belongsToMany(Category::class);
     }
