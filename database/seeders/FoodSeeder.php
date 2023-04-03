@@ -51,7 +51,91 @@ class FoodSeeder extends Seeder
                 'price' => '99.97',
                 'is_published' => '0',
                 'image' => ''
-            ]
+            ],
+            [
+                'label' => 'Frittata con prosciutto',
+                'description' => 'La frittata è uno di quei piatti che piace proprio a tutti e si può preparare davvero in tanti modi.Al forno o in padella,con verdure o con salumi. A casa mia piace molto la frittata con prosciutto e formaggio,l’avete mai provata?',
+                'price' => '15.87',
+                'is_published' => '1',
+                'image' => ''
+            ],
+            [
+                'label' => 'Frittata con prosciutto',
+                'description' => 'La frittata è uno di quei piatti che piace proprio a tutti e si può preparare davvero in tanti modi.Al forno o in padella,con verdure o con salumi. A casa mia piace molto la frittata con prosciutto e formaggio,l’avete mai provata?',
+                'price' => '15.87',
+                'is_published' => '1',
+                'image' => ''
+            ],
+            [
+                'label' => 'Frittata con prosciutto',
+                'description' => 'La frittata è uno di quei piatti che piace proprio a tutti e si può preparare davvero in tanti modi.Al forno o in padella,con verdure o con salumi. A casa mia piace molto la frittata con prosciutto e formaggio,l’avete mai provata?',
+                'price' => '15.87',
+                'is_published' => '1',
+                'image' => ''
+            ],
+            [
+                'label' => 'Frittata con prosciutto',
+                'description' => 'La frittata è uno di quei piatti che piace proprio a tutti e si può preparare davvero in tanti modi.Al forno o in padella,con verdure o con salumi. A casa mia piace molto la frittata con prosciutto e formaggio,l’avete mai provata?',
+                'price' => '15.87',
+                'is_published' => '1',
+                'image' => ''
+            ],
+            [
+                'label' => 'Frittata con prosciutto',
+                'description' => 'La frittata è uno di quei piatti che piace proprio a tutti e si può preparare davvero in tanti modi.Al forno o in padella,con verdure o con salumi. A casa mia piace molto la frittata con prosciutto e formaggio,l’avete mai provata?',
+                'price' => '15.87',
+                'is_published' => '1',
+                'image' => ''
+            ],
+            [
+                'label' => 'Frittata con prosciutto',
+                'description' => 'La frittata è uno di quei piatti che piace proprio a tutti e si può preparare davvero in tanti modi.Al forno o in padella,con verdure o con salumi. A casa mia piace molto la frittata con prosciutto e formaggio,l’avete mai provata?',
+                'price' => '15.87',
+                'is_published' => '1',
+                'image' => ''
+            ],
+            [
+                'label' => 'Frittata con prosciutto',
+                'description' => 'La frittata è uno di quei piatti che piace proprio a tutti e si può preparare davvero in tanti modi.Al forno o in padella,con verdure o con salumi. A casa mia piace molto la frittata con prosciutto e formaggio,l’avete mai provata?',
+                'price' => '15.87',
+                'is_published' => '1',
+                'image' => ''
+            ],
+            [
+                'label' => 'Frittata con prosciutto',
+                'description' => 'La frittata è uno di quei piatti che piace proprio a tutti e si può preparare davvero in tanti modi.Al forno o in padella,con verdure o con salumi. A casa mia piace molto la frittata con prosciutto e formaggio,l’avete mai provata?',
+                'price' => '15.87',
+                'is_published' => '1',
+                'image' => ''
+            ],
+            [
+                'label' => 'Frittata con prosciutto',
+                'description' => 'La frittata è uno di quei piatti che piace proprio a tutti e si può preparare davvero in tanti modi.Al forno o in padella,con verdure o con salumi. A casa mia piace molto la frittata con prosciutto e formaggio,l’avete mai provata?',
+                'price' => '15.87',
+                'is_published' => '1',
+                'image' => ''
+            ],
+            [
+                'label' => 'Frittata con prosciutto',
+                'description' => 'La frittata è uno di quei piatti che piace proprio a tutti e si può preparare davvero in tanti modi.Al forno o in padella,con verdure o con salumi. A casa mia piace molto la frittata con prosciutto e formaggio,l’avete mai provata?',
+                'price' => '15.87',
+                'is_published' => '1',
+                'image' => ''
+            ],
+            [
+                'label' => 'Frittata con prosciutto',
+                'description' => 'La frittata è uno di quei piatti che piace proprio a tutti e si può preparare davvero in tanti modi.Al forno o in padella,con verdure o con salumi. A casa mia piace molto la frittata con prosciutto e formaggio,l’avete mai provata?',
+                'price' => '15.87',
+                'is_published' => '1',
+                'image' => ''
+            ],
+            [
+                'label' => 'Frittata con prosciutto',
+                'description' => 'La frittata è uno di quei piatti che piace proprio a tutti e si può preparare davvero in tanti modi.Al forno o in padella,con verdure o con salumi. A casa mia piace molto la frittata con prosciutto e formaggio,l’avete mai provata?',
+                'price' => '15.87',
+                'is_published' => '1',
+                'image' => ''
+            ],
         ];
 
         foreach ($foods as $food) {
