@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\FoodController;
 use App\Http\Controllers\admin\HomeController as AdminHomeController;
 use App\Http\Controllers\guest\HomeController as GuestHomeController;
 use App\Http\Controllers\ProfileController;
@@ -22,6 +23,7 @@ Route::get('/', [GuestHomeController::class, 'index'])->name('guest.home');
 // # rotte per admin
 Route::middleware('auth')->name('admin.')->prefix('/admin')->group(function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('home');
+    Route::resource('foods', FoodController::class);
 });
 
 Route::middleware('auth')->group(function () {
