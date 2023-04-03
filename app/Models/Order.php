@@ -10,4 +10,8 @@ class Order extends Model
     use HasFactory;
 
     //food_order relation
+    public function foods()
+    {
+        return $this->belongsToMany(Food::class);
+    }
 }
