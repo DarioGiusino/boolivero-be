@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand-md ">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+      @auth
+      <a class="navbar-brand d-flex align-items-center" href="{{ url('/admin') }}">
+      @endauth
       <div class="logo_laravel">
         <img src="https://avatars.githubusercontent.com/u/10514109?s=280&v=4" class="logo">
       </div>
@@ -17,7 +20,12 @@
       <ul class="navbar-nav me-auto">
 
         <li class="nav-item">
+          @guest
           <a class="text-link" href="{{ url('/') }}">{{ __('Boolivero') }}</a>
+          @endguest
+          @auth
+          <a class="text-link" href="{{ url('admin') }}">{{ __('Boolivero') }}</a>
+          @endauth
         </li>
       </ul>
 
