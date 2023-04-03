@@ -6,7 +6,7 @@
   {{-- links --}}
   <ul class="list-unstyled">
     <li class="ms-xl-4 my-xl-3">
-      <a href="">
+      <a href="{{ url('profile') }}">
         <i class="fa-solid fa-id-card"></i>
         <span>Profilo</span>
       </a>
