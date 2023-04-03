@@ -43,7 +43,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Left Side Of Navbar -->
           <ul class="navbar-nav me-auto">
-            
+
             <li class="nav-item">
               <a class="text-link" href="{{ url('/') }}">{{ __('Boolivero') }}</a>
             </li>
@@ -51,7 +51,7 @@
 
           <!-- Right Side Of Navbar -->
           <ul class="navbar-nav ml-auto d-flex align-items-center">
-            
+
             <!-- Authentication Links -->
             @guest
               <li class="nav-item">
@@ -63,20 +63,20 @@
                 </li>
               @endif
             @else
-            <li class="link">
-              <a class="one-link mx-1" href="('#')">Torna a ordinare</a>
-              <a class="one-link" href="{{ route('logout') }}"
-                    onclick="event.preventDefault();
+              <li class="link">
+                <a class="one-link mx-1" href="('#')">Torna a ordinare</a>
+                <a class="one-link" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
-              </a>
-            </li>
+                  {{ __('Logout') }}
+                </a>
+              </li>
               <li class="dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle p-0 mx-3 text-light" href="#" role="button"
                   data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                   {{ Auth::user()->name }}
                 </a>
-                
+
 
                 <div class="dropdown-menu dropdown-menu-right text-light" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{ route('admin.home') }}">{{ __('Dashboard') }}</a>
@@ -94,9 +94,11 @@
               <li>
                 <div class="media">
                   <figure>
-                    <img class="rounded-circle mt-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp03ufSRfn7HaHhshFyqzmGCWQjh_LozvMRA&usqp=CAU" alt="user.name" />
+                    <img class="rounded-circle mt-2"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp03ufSRfn7HaHhshFyqzmGCWQjh_LozvMRA&usqp=CAU"
+                      alt="user.name" />
                   </figure>
-                  </div>
+                </div>
               </li>
             @endguest
           </ul>

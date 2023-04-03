@@ -6,7 +6,7 @@
 
 {{-- # sidebar section --}}
 <section id="sidebar" class="h-100 d-md-flex flex-column">
-  {{-- todo title >768px --}}
+  {{-- title >768px --}}
   <h2>Dashboard</h2>
 
   {{-- links --}}
