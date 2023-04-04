@@ -5,8 +5,8 @@
     {{-- header --}}
     <header class="my-3">
       <h3 class="text-center">Menù</h3>
-      <div class="me-1">
-        <a class="text-success d-flex align-items-center justify-content-end" href="{{ route('admin.foods.create') }}"><span
+      <div class="me-1 d-flex justify-content-end">
+        <a class="text-success d-flex align-items-center" href="{{ route('admin.foods.create') }}"><span
             class="d-none d-md-inline-block me-2">Aggiungi
             un nuovo
             piatto</span> <i class="fa-solid fa-square-plus fa-2x"></i></a>

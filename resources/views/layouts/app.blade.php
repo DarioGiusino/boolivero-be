@@ -29,19 +29,25 @@
 
 <body>
   <div id="app">
-
-
+    {{-- include navbar --}}
     @include('includes.navbar')
 
+    {{-- main --}}
     <main class="d-flex flex-column flex-md-row-reverse">
+      {{-- main content --}}
       <div class="main-content flex-grow-1">
         @yield('content')
       </div>
+      {{-- main sidebar --}}
       <div class="fb-10-md-20">
         @include('includes.sidebar')
       </div>
     </main>
+
+    {{-- scripts --}}
+    @yield('scripts')
   </div>
+
 </body>
 
 </html>
