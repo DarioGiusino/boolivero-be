@@ -30,7 +30,7 @@
                 <input class="form-check-input float-none" type="checkbox" role="switch">
               </div>
 
-              {{-- dropdown --}}
+              {{-- card dropdown --}}
               <div class="dropdown">
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
                     class="fa-solid fa-ellipsis"></i></button>
@@ -69,6 +69,9 @@
 
           {{-- table switch (publish) --}}
           <th scope="col"><i class="fa-solid fa-earth-europe"></i></th>
+
+          {{-- table dropdown --}}
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
@@ -89,8 +92,21 @@
 
             {{-- table switch (publish) --}}
             <td>
-              <div class="form-check form-switch p-0 m-0 text-end">
+              <div class="form-check form-switch p-0 m-0 pt-2 text-end">
                 <input class="form-check-input float-none m-0" type="checkbox" role="switch">
+              </div>
+            </td>
+
+            {{-- table dropdown --}}
+            <td class="pt-0">
+              <div class="dropdown position-relative">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
+                    class="fa-solid fa-ellipsis-vertical"></i></button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something</a></li>
+                </ul>
               </div>
             </td>
           </tr>
