@@ -24,6 +24,6 @@ class Food extends Model
     //get abstract
     public function getAbstract()
     {
-        return substr($this->description, 0, 20) . '...';
+        return substr($this->description, 0, 100) . '...';
     }
 }
