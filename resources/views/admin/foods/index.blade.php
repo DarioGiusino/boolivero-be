@@ -35,7 +35,8 @@
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
                     class="fa-solid fa-ellipsis"></i></button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#"><i class="fa-solid fa-eye"></i> Vedi</a></li>
+                  <li><button data-bs-toggle="modal" data-bs-target="#food-{{ $food->id }}" class="dropdown-item"><i
+                        class="fa-solid fa-eye"></i> Vedi</button></li>
                   <li><a class="dropdown-item" href="#"><i class="fa-solid fa-sliders"></i> Modifica</a></li>
                   <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash-can"></i> Elimina</a></li>
                 </ul>
@@ -49,6 +50,23 @@
       @endforelse
     </div>
 
+    {{-- # show modal --}}
+    @foreach ($foods as $food)
+      <div class="modal fade" id="food-{{ $food->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">{{ $food->label }}</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              {{ $food->description }}
+            </div>
+          </div>
+        </div>
+      </div>
+    @endforeach
 
     {{-- # main content >768px (table) --}}
     <table class="table d-none d-md-table">
@@ -103,7 +121,8 @@
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
                     class="fa-solid fa-ellipsis-vertical"></i></button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#"><i class="fa-solid fa-eye"></i> Vedi</a></li>
+                  <li><button data-bs-toggle="modal" data-bs-target="#food-{{ $food->id }}" class="dropdown-item"><i
+                        class="fa-solid fa-eye"></i> Vedi</button></li>
                   <li><a class="dropdown-item" href="#"><i class="fa-solid fa-sliders"></i> Modifica</a></li>
                   <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash-can"></i> Elimina</a></li>
                 </ul>
