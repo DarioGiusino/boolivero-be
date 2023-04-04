@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\HomeController as AdminHomeController;
+use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\guest\HomeController as GuestHomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -25,9 +26,10 @@ Route::middleware('auth')->name('admin.')->prefix('/admin')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+// # rotte per restaurant
+Route::get('/profile/restaurant/{restaurant}', [RestaurantController::class, 'show'])->name('profile.restaurant.show');
 
 require __DIR__ . '/auth.php';

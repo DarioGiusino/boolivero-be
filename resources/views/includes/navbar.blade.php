@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md ">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="{{ url('/admin') }}">
+    <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
       <div class="logo_laravel">
         <img src="https://avatars.githubusercontent.com/u/10514109?s=280&v=4" class="logo">
       </div>
@@ -17,7 +17,7 @@
       <ul class="navbar-nav me-auto">
 
         <li class="nav-item">
-          <a class="text-link" href="{{ url('/admin') }}">{{ __('Boolivero') }}</a>
+          <a class="text-link" href="{{ url('/') }}">{{ __('Boolivero') }}</a>
         </li>
       </ul>
 
