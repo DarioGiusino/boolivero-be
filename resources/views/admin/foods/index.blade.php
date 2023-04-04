@@ -7,7 +7,7 @@
       <h3>Menù</h3>
     </header>
 
-    {{-- # main content >768px (cards) --}}
+    {{-- # main content <768px (cards) --}}
     <div class="row row-cols-1 d-md-none">
       @forelse ($foods as $food)
         {{-- cards col --}}
