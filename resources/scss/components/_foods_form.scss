@@ -1,0 +1,14 @@
+#food-create,
+#food-edit {
+    #preview {
+        max-height: 15rem;
+    }
+
+    .preview-box {
+        padding: 5px 0;
+        border: 1px;
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
