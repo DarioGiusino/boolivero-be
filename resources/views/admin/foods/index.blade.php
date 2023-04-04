@@ -35,9 +35,9 @@
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
                     class="fa-solid fa-ellipsis"></i></button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="fa-solid fa-eye"></i> Vedi</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="fa-solid fa-sliders"></i> Modifica</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash-can"></i> Elimina</a></li>
                 </ul>
               </div>
             </div>
@@ -103,9 +103,9 @@
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
                     class="fa-solid fa-ellipsis-vertical"></i></button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="fa-solid fa-eye"></i> Vedi</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="fa-solid fa-sliders"></i> Modifica</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash-can"></i> Elimina</a></li>
                 </ul>
               </div>
             </td>
