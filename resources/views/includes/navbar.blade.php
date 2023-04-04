@@ -66,7 +66,7 @@
           <li>
             <div class="media">
               <figure>
-                <img class="rounded-circle mt-2"
+                <img class="rounded-circle mt-2 logo"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp03ufSRfn7HaHhshFyqzmGCWQjh_LozvMRA&usqp=CAU"
                   alt="user.name" />
               </figure>
