@@ -22,8 +22,8 @@ class RestaurantSeeder extends Seeder
         $new_restaurant->restaurant_name = 'Admin restaurant';
         $new_restaurant->address = 'Via Boolean, 83';
         $new_restaurant->p_iva = '86334519757';
-        $new_restaurant->banner = '';
-        $new_restaurant->vote = 9;
+        $new_restaurant->banner = 'https://picsum.photos/536/354';
+        $new_restaurant->vote = 3.4;
 
         $new_restaurant->save();
 
@@ -32,50 +32,50 @@ class RestaurantSeeder extends Seeder
                 'restaurant_name' => 'Pizzeria Ciro',
                 'address' => 'Via del Baffo, 14',
                 'p_iva' => '86334519751',
-                'banner' => '',
-                'vote' => '8',
+                'banner' => 'https://picsum.photos/536/354',
+                'vote' => '4.1',
             ],
             [
                 'restaurant_name' => 'Al Gelatone',
                 'address' => 'Via delle Magnolie, 89',
                 'p_iva' => '86334519752',
-                'banner' => '',
-                'vote' => '7',
+                'banner' => 'https://picsum.photos/536/354',
+                'vote' => '2.5',
             ],
             [
                 'restaurant_name' => 'Paninoteca Guzza',
                 'address' => 'Via calzone, 18',
                 'p_iva' => '86334519753',
-                'banner' => '',
-                'vote' => '6',
+                'banner' => 'https://picsum.photos/536/354',
+                'vote' => '3.2',
             ],
             [
                 'restaurant_name' => 'Kalos',
                 'address' => 'Via Terrasini, 57',
                 'p_iva' => '86334519754',
-                'banner' => '',
-                'vote' => '5',
+                'banner' => 'https://picsum.photos/536/354',
+                'vote' => '1.6',
             ],
             [
                 'restaurant_name' => 'Sushi Wong',
                 'address' => 'Via Yoshimizu, 90',
                 'p_iva' => '86334519755',
-                'banner' => '',
-                'vote' => '4',
+                'banner' => 'https://picsum.photos/536/354',
+                'vote' => '3.7',
             ],
             [
                 'restaurant_name' => 'Sakura',
                 'address' => 'Via degli Anime, 33',
                 'p_iva' => '86334519756',
-                'banner' => '',
-                'vote' => '3',
+                'banner' => 'https://picsum.photos/536/354',
+                'vote' => '4.3',
             ],
             [
                 'restaurant_name' => 'Da Mindu',
                 'address' => 'Via dei molti nomi, 5',
                 'p_iva' => '86334519758',
-                'banner' => '',
-                'vote' => '9',
+                'banner' => 'https://picsum.photos/536/354',
+                'vote' => '4.7',
             ],
         ];
 
