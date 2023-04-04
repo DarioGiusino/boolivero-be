@@ -3,8 +3,14 @@
 @section('content')
   <section id="foods-index" class="container">
     {{-- header --}}
-    <header class="text-center my-3">
-      <h3>Menù</h3>
+    <header class="my-3">
+      <h3 class="text-center">Menù</h3>
+      <div class="me-1">
+        <a class="text-success d-flex align-items-center justify-content-end" href="{{ route('admin.foods.create') }}"><span
+            class="d-none d-md-inline-block me-2">Aggiungi
+            un nuovo
+            piatto</span> <i class="fa-solid fa-square-plus fa-2x"></i></a>
+      </div>
     </header>
 
     {{-- # main content <768px (cards) --}}
@@ -32,13 +38,25 @@
 
               {{-- card dropdown --}}
               <div class="dropdown">
+                {{-- dropdown toggle --}}
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
                     class="fa-solid fa-ellipsis"></i></button>
+                {{-- dropdown list --}}
                 <ul class="dropdown-menu">
+                  {{-- (fake)show button triggers the modal --}}
                   <li><button data-bs-toggle="modal" data-bs-target="#food-{{ $food->id }}" class="dropdown-item"><i
                         class="fa-solid fa-eye"></i> Vedi</button></li>
-                  <li><a class="dropdown-item" href="#"><i class="fa-solid fa-sliders"></i> Modifica</a></li>
-                  <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash-can"></i> Elimina</a></li>
+                  {{-- edit link --}}
+                  <li><a class="dropdown-item" href="{{ route('admin.foods.edit', $food->id) }}"><i
+                        class="fa-solid fa-sliders"></i> Modifica</a></li>
+                  {{-- destroy form --}}
+                  <li>
+                    <form class="d-inline delete-form" action="{{ route('admin.foods.destroy', $food->id) }}"
+                      method="post" data-form="{{ $food->label }}">
+                      @csrf @method('delete')
+                      <button type="submit" class="dropdown-item"><i class="fa-solid fa-trash-can"></i> Elimina</button>
+                    </form>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -118,13 +136,25 @@
             {{-- table dropdown --}}
             <td class="pt-0">
               <div class="dropdown position-relative">
+                {{-- dropdown toggle --}}
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
                     class="fa-solid fa-ellipsis-vertical"></i></button>
+                {{-- dropdown list --}}
                 <ul class="dropdown-menu">
+                  {{-- (fake)show button triggers the modal --}}
                   <li><button data-bs-toggle="modal" data-bs-target="#food-{{ $food->id }}" class="dropdown-item"><i
                         class="fa-solid fa-eye"></i> Vedi</button></li>
-                  <li><a class="dropdown-item" href="#"><i class="fa-solid fa-sliders"></i> Modifica</a></li>
-                  <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash-can"></i> Elimina</a></li>
+                  {{-- edit link --}}
+                  <li><a class="dropdown-item" href="{{ route('admin.foods.edit', $food->id) }}"><i
+                        class="fa-solid fa-sliders"></i> Modifica</a></li>
+                  {{-- destroy form --}}
+                  <li>
+                    <form class="d-inline delete-form" action="{{ route('admin.foods.destroy', $food->id) }}"
+                      method="post" data-form="{{ $food->label }}">
+                      @csrf @method('delete')
+                      <button type="submit" class="dropdown-item"><i class="fa-solid fa-trash-can"></i> Elimina</button>
+                    </form>
+                  </li>
                 </ul>
               </div>
             </td>
