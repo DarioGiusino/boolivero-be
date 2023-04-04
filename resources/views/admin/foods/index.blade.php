@@ -14,18 +14,22 @@
         <div class="col d-flex justify-content-center mb-4">
           <div class="card w-100 position-relative">
             <div class="card-body">
+
               {{-- card title --}}
               <h5 class="card-title">{{ $food->label }}</h5>
+
               {{-- card subtitle --}}
               <h6 class="card-subtitle mb-2 text-body-secondary">€ {{ $food->price }}</h6>
+
               {{-- card text --}}
               <p class="card-text">{{ $food->getAbstract() }}</p>
+
               {{-- card switch (publish) --}}
               <div class="form-check form-switch p-0 text-end">
-                <label class="form-check-label" for="flexSwitchCheckDefault"><i
-                    class="fa-solid fa-earth-europe"></i></label>
-                <input class="form-check-input float-none" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label"><i class="fa-solid fa-earth-europe"></i></label>
+                <input class="form-check-input float-none" type="checkbox" role="switch">
               </div>
+
               {{-- dropdown --}}
               <div class="dropdown">
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
@@ -62,11 +66,24 @@
         @forelse($foods as $food)
           {{-- table rows --}}
           <tr>
+            {{-- title --}}
             <th scope="row">{{ $food->label }}</th>
+
+            {{-- abstract --}}
             <td>{{ $food->getAbstract() }}</td>
+
+            {{-- price --}}
             <td>€ {{ $food->price }}</td>
+
+            {{-- last update --}}
             <td>{{ $food->updated_at }}</td>
-            <td>{{ $food->is_published }}</td>
+
+            {{-- table switch (publish) --}}
+            <td>
+              <div class="form-check form-switch p-0 m-0 text-end">
+                <input class="form-check-input float-none m-0" type="checkbox" role="switch">
+              </div>
+            </td>
           </tr>
         @empty
           {{-- if there is no foods to display --}}
