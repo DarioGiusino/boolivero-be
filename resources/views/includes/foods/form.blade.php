@@ -1,10 +1,9 @@
 @if ($food->exists)
-  <form class="mb-5" action="{{ route('admin.foods.update', $food->id) }}" method="post" enctype="multipart/form-data"
-    novalidate>
+  <form class="mb-5" action="{{ route('admin.foods.update', $food->id) }}" method="post" enctype="multipart/form-data">
     {{-- * method helper --}}
     @method('PUT')
   @else
-    <form class="mb-5" action="{{ route('admin.foods.store') }}" method="post" enctype="multipart/form-data" novalidate>
+    <form class="mb-5" action="{{ route('admin.foods.store') }}" method="post" enctype="multipart/form-data">
 @endif
 {{-- ! cross-site request forgery --}}
 @csrf
