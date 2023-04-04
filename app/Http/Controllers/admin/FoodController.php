@@ -91,7 +91,7 @@ class FoodController extends Controller
         $food->save();
 
         // todo redirect to its details
-        return to_route('admin.foods.index')->with('message', "$food->label created succesfully.")->with('type', 'success');;
+        return to_route('admin.foods.index')->with('message', "$food->label creato con successo.")->with('type', 'success');;
     }
 
     /**
@@ -100,7 +100,7 @@ class FoodController extends Controller
     public function edit(Food $food)
     {
         if ($food->restaurant_id !== Auth::id()) {
-            return to_route('admin.foods.index')->with('message', "Access denied to $food->label")->with('type', 'info');
+            return to_route('admin.foods.index')->with('message', "Accesso non consentito a $food->label")->with('type', 'info');
         }
 
         return view('admin.foods.edit', compact('food'));
@@ -155,7 +155,7 @@ class FoodController extends Controller
 
         $food->update($data);
 
-        return to_route('admin.foods.index')->with('message', "$food->label updated succesfully.")->with('type', 'warning');
+        return to_route('admin.foods.index')->with('message', "$food->label modificato con successo.")->with('type', 'warning');
     }
 
     /**
@@ -168,6 +168,6 @@ class FoodController extends Controller
 
         $food->delete();
 
-        return to_route('admin.foods.index')->with('message', "$food->label deleted succesfully.")->with('type', 'danger');;
+        return to_route('admin.foods.index')->with('message', "$food->label cancellato con successo.")->with('type', 'danger');;
     }
 }

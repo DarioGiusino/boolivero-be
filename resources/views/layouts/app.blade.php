@@ -44,6 +44,9 @@
       </div>
     </main>
 
+    {{-- toast --}}
+    @include('includes.alerts.toast')
+
     {{-- scripts --}}
     @yield('scripts')
   </div>
