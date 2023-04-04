@@ -73,7 +73,7 @@
             <td>{{ $food->getAbstract() }}</td>
 
             {{-- price --}}
-            <td>€ {{ $food->price }}</td>
+            <td class="table-price">€ {{ $food->price }}</td>
 
             {{-- last update --}}
             <td>{{ $food->updated_at }}</td>
