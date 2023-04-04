@@ -53,18 +53,27 @@
     {{-- # main content >768px (table) --}}
     <table class="table d-none d-md-table">
       <thead>
-        {{-- table head row --}}
+        {{-- * table head row --}}
         <tr>
+          {{-- title --}}
           <th scope="col"><i class="fa-solid fa-tags"></i></th>
+
+          {{-- abstract --}}
           <th scope="col"><i class="fa-solid fa-quote-left"></i></th>
+
+          {{-- price --}}
           <th scope="col"><i class="fa-solid fa-sack-dollar"></i></th>
+
+          {{-- last update --}}
           <th scope="col"><i class="fa-solid fa-pen-to-square"></i></th>
+
+          {{-- table switch (publish) --}}
           <th scope="col"><i class="fa-solid fa-earth-europe"></i></th>
         </tr>
       </thead>
       <tbody>
         @forelse($foods as $food)
-          {{-- table rows --}}
+          {{-- * table rows --}}
           <tr>
             {{-- title --}}
             <th scope="row">{{ $food->label }}</th>
