@@ -112,7 +112,6 @@ class FoodController extends Controller
     public function update(Request $request, Food $food)
     {
         // ! validation
-        // ! validation
         $request->validate(
             [
                 'label' => 'required|string|max:40',
@@ -162,8 +161,13 @@ class FoodController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Food $food)
     {
-        //
+        // if exists an image, delete it to make space
+        if ($food->image) Storage::delete($food->image);
+
+        $food->delete();
+
+        return to_route('admin.foods.index')->with('message', "$food->label deleted succesfully.")->with('type', 'danger');;
     }
 }
