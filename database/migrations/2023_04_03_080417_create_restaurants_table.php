@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('p_iva', 11)->unique();
             $table->string('banner')->nullable();
-            $table->tinyInteger('vote')->nullable();
+            $table->float('vote', 4, 1)->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

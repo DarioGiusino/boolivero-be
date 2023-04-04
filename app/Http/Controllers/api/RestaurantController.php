@@ -30,7 +30,10 @@ class RestaurantController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $restaurant = Restaurant::find($id);
+        if (!$restaurant) return response(null, 404);
+
+        return response()->json($restaurant);
     }
 
     /**
