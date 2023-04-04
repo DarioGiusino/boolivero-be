@@ -11,11 +11,11 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col" class="text-center"><i class="fa-solid fa-tags"></i></th>
-          <th scope="col" class="text-center"><i class="fa-solid fa-quote-left"></i></th>
-          <th scope="col" class="text-center"><i class="fa-solid fa-sack-dollar"></i></th>
-          <th scope="col" class="text-center"><i class="fa-solid fa-pen-to-square"></i></th>
-          <th scope="col" class="text-center"><i class="fa-solid fa-earth-europe"></i></th>
+          <th scope="col"><i class="fa-solid fa-tags"></i></th>
+          <th scope="col"><i class="fa-solid fa-quote-left"></i></th>
+          <th scope="col"><i class="fa-solid fa-sack-dollar"></i></th>
+          <th scope="col"><i class="fa-solid fa-pen-to-square"></i></th>
+          <th scope="col"><i class="fa-solid fa-earth-europe"></i></th>
         </tr>
       </thead>
       <tbody>
