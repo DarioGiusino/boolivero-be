@@ -10,6 +10,7 @@ class Food extends Model
 {
     use HasFactory;
     protected $table = 'foods';
+    protected $fillable = ['label', 'description', 'price', 'is_published', 'image'];
 
     //food_order relation
     public function orders()
