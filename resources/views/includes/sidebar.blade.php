@@ -1,7 +1,7 @@
 {{-- # sidebar section --}}
 <section id="sidebar" class="h-100 d-md-flex flex-column">
   {{-- title >768px --}}
-  <h2>Dashboard</h2>
+  <h2 class="px-2">Dashboard</h2>
 
   {{-- links --}}
   <ul class="list-unstyled">
