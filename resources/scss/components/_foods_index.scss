@@ -6,4 +6,18 @@
             margin-left: 0.25em;
         }
     }
+
+    // dropdown
+    .dropdown {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+
+    .btn {
+        border-color: transparent;
+        &:after {
+            content: none;
+        }
+    }
 }

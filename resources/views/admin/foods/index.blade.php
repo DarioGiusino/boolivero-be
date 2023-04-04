@@ -12,7 +12,7 @@
       @forelse ($foods as $food)
         {{-- cards col --}}
         <div class="col d-flex justify-content-center mb-4">
-          <div class="card w-100">
+          <div class="card w-100 position-relative">
             <div class="card-body">
               {{-- card title --}}
               <h5 class="card-title">{{ $food->label }}</h5>
@@ -25,6 +25,16 @@
                 <label class="form-check-label" for="flexSwitchCheckDefault"><i
                     class="fa-solid fa-earth-europe"></i></label>
                 <input class="form-check-input float-none" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+              </div>
+              {{-- dropdown --}}
+              <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
+                    class="fa-solid fa-ellipsis"></i></button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something</a></li>
+                </ul>
               </div>
             </div>
           </div>
