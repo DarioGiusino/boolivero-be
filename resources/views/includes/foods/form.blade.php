@@ -36,8 +36,9 @@
     </div>
   </div>
 
-  {{-- price --}}
+  {{-- price && type --}}
   <div class="col-4 col-lg-2">
+    {{-- price --}}
     <div class="mb-3">
       <label for="price" class="form-label">Prezzo in euro</label>
       <input type="number" step="0.01" min="0.01" max="9999.99"
@@ -47,6 +48,22 @@
         <div class="invalid-feedback">{{ $message }}</div>
       @else
         <div class="form-text">Prezzo del piatto</div>
+      @enderror
+    </div>
+
+    {{-- type --}}
+    <div class="mb-3">
+      <label for="type" class="form-label">Tipologia portata</label>
+      <select class="form-select @error('type') is-invalid @enderror" id="type" name="type">
+        <option value="">...</option>
+        <option @if (old('type', $food->type) === 'Antipasto') selected @endif value="Antipasto">Antipasto</option>
+        <option @if (old('type', $food->type) === 'Primo piatto') selected @endif value="Primo piatto">Primo piatto</option>
+        <option @if (old('type', $food->type) === 'Secondo piatto') selected @endif value="Secondo piatto">Secondo piatto</option>
+        <option @if (old('type', $food->type) === 'Dessert') selected @endif value="Dessert">Dessert</option>
+        <option @if (old('type', $food->type) === 'Bevanda') selected @endif value="Bevanda">Bevanda</option>
+      </select>
+      @error('type')
+        <div class="invalid-feedback">{{ $message }}</div>
       @enderror
     </div>
   </div>
