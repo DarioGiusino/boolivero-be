@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('foods', function (Blueprint $table) {
             $table->id();
-            $table->string('label');
+            $table->string('label')->unique();
             $table->text('description')->nullable();
             $table->decimal('price', 6, 2);
             $table->boolean('is_published')->default(0);
