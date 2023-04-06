@@ -7,7 +7,7 @@
           <div class="card-header">{{ __('Register') }}</div>
 
           <div class="card-body">
-            <form class="mb-5" action="{{ route('admin.restaurants.store') }}" method="POST">
+            <form class="mb-5" action="{{ route('admin.restaurants.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
               
 
@@ -56,11 +56,11 @@
               </div>
 
               <div class="mb-4 row">
-                <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine') }}</label>
+                <label for="banner" class="col-md-4 col-form-label text-md-right">{{ __('Immagine') }}</label>
 
                 <div class="col-md-6">
-                  <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" autofocus>
-                  @error('image')
+                  <input type="file" class="form-control @error('banner') is-invalid @enderror" id="banner" name="banner" autofocus>
+                  @error('banner')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
                     </span>
@@ -126,7 +126,7 @@
 @section('script')
   <script>
     // get elements from dom
-    const imageInput = document.getElementById("image");
+    const imageInput = document.getElementById("banner");
     const previewField = document.getElementById("preview");
 
     // fallback image
