@@ -73,7 +73,8 @@
       <div class="modal fade" id="food-{{ $food->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-          <div class="modal-content" style="background-image: url('{{ asset('storage/' . $food->image) }}')">
+          <div class="modal-content"
+            @if ($food->image) style="background-image: url('{{ asset('storage/' . $food->image) }}')" @endif>
             <div class="modal-header">
               <h1 class="modal-title fs-5">{{ $food->label }}</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
