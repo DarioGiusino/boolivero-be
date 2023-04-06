@@ -13,7 +13,7 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        $restaurants = Restaurant::orderBy('updated_at')->with('foods')->get();
+        $restaurants = Restaurant::orderBy('updated_at')->get();
         return response()->json($restaurants);
     }
 
