@@ -83,7 +83,12 @@ class RestaurantController extends Controller
     public function show(string $id)
     {
         $restaurant = Restaurant::findOrFail($id);
-        return view('profile.restaurant.index', compact('restaurant'));
+        $auth_id = Auth::id();
+
+        if ($auth_id == $restaurant->user_id) {
+            return view('profile.restaurant.index', compact('restaurant'));
+        }
+        return view('guest.home');
     }
     public function edit(Restaurant $restaurant)
     {
