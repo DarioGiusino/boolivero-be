@@ -9,6 +9,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 
 class FoodController extends Controller
 {
@@ -39,13 +40,14 @@ class FoodController extends Controller
         // ! validation
         $request->validate(
             [
-                'label' => 'required|string|max:40',
+                'label' => 'required|string|max:40|unique:foods',
                 'description' => 'string',
                 'image' => 'nullable|image|mimes:png,jpeg,jpg',
                 'price' => 'required|numeric'
             ],
             [
                 'label.required' => 'Devi inserire un nome.',
+                'label.unique' => 'Questo nome è già stato preso.',
                 'label.string' => 'Il nome deve essere alfanumerico.',
                 'label.max' => 'Lunghezza massima superata, max: 40.',
                 'description.string' => 'La descrizione deve essere alfanumerica e non può essere vuota.',
@@ -62,18 +64,17 @@ class FoodController extends Controller
         // create a new food
         $food = new Food();
 
-        // todo define slug
-        // $food->slug = Str::slug($data['label'], '-');
+        // define slug
+        $food->slug = Str::slug($data['label'], '-');
 
         // check if an image is given
         if (Arr::exists($data, 'image')) {
-            // todo take the image extension
-            // $extension = $data['image']->extension();
-            // todo build the image file name with the slug (unique causa depends on title witch is unique) + extension
-            // $file_name = "$food->slug.$extension";
-            // $img_url = Storage::putFileAs('foods', $data['image'], $file_name);
+            //  take the image extension
+            $extension = $data['image']->extension();
+            // build the image file name with the slug (unique causa depends on title witch is unique) + extension
+            $file_name = "$food->slug.$extension";
             // define a variable where the file is saved in a path storage/app/public/{} that return a correct URL
-            $img_url = Storage::put('foods', $data['image']);
+            $img_url = Storage::putFileAs('foods', $data['image'], $file_name);
             // change the file given with the correct url
             $data['image'] = $img_url;
         }
@@ -114,13 +115,14 @@ class FoodController extends Controller
         // ! validation
         $request->validate(
             [
-                'label' => 'required|string|max:40',
+                'label' => ['required', 'string', 'max:40', Rule::unique('foods')->ignore($food->id)],
                 'description' => 'string',
                 'image' => 'nullable|image|mimes:png,jpeg,jpg',
                 'price' => 'required|numeric'
             ],
             [
                 'label.required' => 'Devi inserire un nome.',
+                'label.unique' => 'Questo nome è già stato preso.',
                 'label.string' => 'Il nome deve essere alfanumerico.',
                 'label.max' => 'Lunghezza massima superata, max: 40.',
                 'description.string' => 'La descrizione deve essere alfanumerica e non può essere vuota.',
@@ -132,20 +134,19 @@ class FoodController extends Controller
         );
 
         $data = $request->all();
-        // todo define slug
-        // $food->slug = Str::slug($data['label'], '-');
+        // define slug
+        $food->slug = Str::slug($data['label'], '-');
 
         // check if an image is given
         if (Arr::exists($data, 'image')) {
             // if exists an image, delete it to make space for the newest
             if ($food->image) Storage::delete($food->image);
-            // todo take the image extension
-            // $extension = $data['image']->extension();
-            // todo build the image file name with the slug (unique causa depends on title witch is unique) + extension
-            // $file_name = "$food->slug.$extension";
-            // $img_url = Storage::putFileAs('foods', $data['image'], $file_name);
+            // take the image extension
+            $extension = $data['image']->extension();
+            // build the image file name with the slug (unique causa depends on title witch is unique) + extension
+            $file_name = "$food->slug.$extension";
             // define a variable where the file is saved in a path storage/app/public/{} that return a correct URL
-            $img_url = Storage::put('foods', $data['image']);
+            $img_url = Storage::putFileAs('foods', $data['image'], $file_name);
             // change the file given with the correct url
             $data['image'] = $img_url;
         }
