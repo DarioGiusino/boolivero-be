@@ -36,4 +36,26 @@
             content: none;
         }
     }
+
+    // modal
+    .modal-content {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        .modal-header,
+        .modal-body,
+        .modal-footer {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: #fff;
+
+            .btn-info {
+                background-color: #0dcaf0;
+                padding: 0.25rem 0.5rem;
+                border-radius: 0.25rem;
+                font-size: 0.875rem;
+                color: #000;
+            }
+        }
+    }
 }

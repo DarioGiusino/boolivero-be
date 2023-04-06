@@ -72,14 +72,34 @@
     @foreach ($foods as $food)
       <div class="modal fade" id="food-{{ $food->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content" style="background-image: url('{{ asset('storage/' . $food->image) }}')">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">{{ $food->label }}</h1>
+              <h1 class="modal-title fs-5">{{ $food->label }}</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              {{ $food->description }}
+              <p class="mb-0">{{ $food->description }}</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+              {{-- modal food price --}}
+              <div class="btn-info">
+                € {{ $food->price }}
+              </div>
+
+              {{-- modal footer button --}}
+              <div>
+                {{-- edit link --}}
+                <a class="btn btn-sm btn-warning" href="{{ route('admin.foods.edit', $food->id) }}"><i
+                    class="fa-solid fa-sliders"></i> Modifica</a>
+                {{-- destroy form --}}
+                <form class="d-inline delete-form" action="{{ route('admin.foods.destroy', $food->id) }}" method="post"
+                  data-form="{{ $food->label }}">
+                  @csrf @method('delete')
+                  <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i>
+                    Elimina</button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -152,7 +172,8 @@
                     <form class="d-inline delete-form" action="{{ route('admin.foods.destroy', $food->id) }}"
                       method="post" data-form="{{ $food->label }}">
                       @csrf @method('delete')
-                      <button type="submit" class="dropdown-item"><i class="fa-solid fa-trash-can"></i> Elimina</button>
+                      <button type="submit" class="dropdown-item"><i class="fa-solid fa-trash-can"></i>
+                        Elimina</button>
                     </form>
                   </li>
                 </ul>
