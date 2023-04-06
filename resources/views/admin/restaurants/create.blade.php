@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.guest')
 @section('content')
 <div class="container mt-4">
     <div class="row justify-content-center">
@@ -45,7 +45,7 @@
 
                 <div class="col-md-6">
                   <input id="p_iva" type="text" class="form-control @error('p_iva') is-invalid @enderror"
-                    name="p_iva" value="{{ old('p_iva') }}" required autocomplete="p_iva" autofocus>
+                    name="p_iva" maxlength="11" value="{{ old('p_iva') }}" required autocomplete="p_iva" autofocus>
 
                   @error('p_iva')
                     <span class="invalid-feedback" role="alert">
@@ -59,14 +59,23 @@
                 <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine') }}</label>
 
                 <div class="col-md-6">
-                  <input id="image" type="text" class="form-control @error('image') is-invalid @enderror"
-                    name="image" value="{{ old('image') }}" autocomplete="image" autofocus>
-
+                  <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" autofocus>
                   @error('image')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
                     </span>
                   @enderror
+                </div>
+              </div>
+
+              <div class="col-2">
+                <div class="mb-3 d-flex justify-content-between">
+                  <label for="preview" class="form-label">Preview immagine</label>
+                  <div class="preview-box  justify-content-center">
+                    <img id="preview" class="img-fluid d-block"
+                      src="{{ $restaurant->banner ? asset("storage/$restaurant->banner") : 'https://marcolanci.it/utils/placeholder.jpg' }}"
+                      alt="{{ $restaurant->restaurant_name }}">
+                  </div>
                 </div>
               </div>
 
