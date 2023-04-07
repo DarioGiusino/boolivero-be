@@ -28,7 +28,7 @@
                 <div class="mb-2">
                         <label for="email">{{__('Immagine') }}</label>
                         <div class="gallery">
-                        <img class="img-fluid" src="{{ $restaurant->banner }}" alt="{{$restaurant->restaurant_name}}">
+                        <img class="img-fluid" src="{{ asset('storage/'.$restaurant->banner) }}" alt="{{$restaurant->restaurant_name}}">
                         </div>
         </div>
             
