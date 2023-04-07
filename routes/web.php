@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\admin\FoodController;
 use App\Http\Controllers\admin\HomeController as AdminHomeController;
-use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\admin\RestaurantController;
 use App\Http\Controllers\guest\HomeController as GuestHomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -25,13 +25,11 @@ Route::get('/', [GuestHomeController::class, 'index'])->name('guest.home');
 Route::middleware('auth')->name('admin.')->prefix('/admin')->group(function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('home');
     Route::resource('foods', FoodController::class);
+    Route::resource('restaurants', RestaurantController::class);
 });
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-// # rotte per restaurant
-Route::get('/profile/restaurant/{restaurant}', [RestaurantController::class, 'show'])->name('profile.restaurant.show');
-
 require __DIR__ . '/auth.php';
