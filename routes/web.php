@@ -32,9 +32,4 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-// # rotte per restaurant
-
-//Route::get('/profile/restaurant/{restaurant}', [RestaurantController::class, 'show'])->name('profile.restaurant.show');
-//Route::get('/admin/restaurant/create', [RestaurantController::class, 'create'])->name('admin.restaurant.create');
-//Route::post('/admin/restaurant', [RestaurantController::class, 'store'])->name('admin.restaurant.store');
 require __DIR__ . '/auth.php';
