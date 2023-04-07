@@ -6,6 +6,7 @@ use App\Models\Restaurant;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Arr;
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
@@ -24,7 +25,8 @@ class RestaurantController extends Controller
     public function create()
     {
         $restaurant = new Restaurant();
-        return view('admin.restaurants.create', compact('restaurant'));
+        $categories = Category::all();
+        return view('admin.restaurants.create', compact('restaurant', 'categories'));
     }
 
     public function store(Request $request)
@@ -38,6 +40,7 @@ class RestaurantController extends Controller
                 'p_iva' => 'string',
                 'banner' => 'nullable|image|mimes:png,jpeg,jpg',
                 'vote' => 'numeric',
+                'categories' => 'nullable|exists:categories,id'
             ],
             [
                 'restaurant_name.required' => 'Devi inserire un nome.',
@@ -50,6 +53,7 @@ class RestaurantController extends Controller
                 'banner.image' => 'Inserisci un file di tipo immagine.',
                 'banner.mimes' => 'Sono supportati solo jpeg, jpg and png.',
                 'vote.numeric' => 'Il prezzo deve essere numerico.',
+                'categories' => 'Le categorie selezionate non sono valide.'
             ]
         );
 
@@ -76,6 +80,8 @@ class RestaurantController extends Controller
         // save new restaurant on db
         $restaurant->save();
 
+        $restaurant->categories()->attach($data['categories']);
+
 
         // todo redirect to its details
         return redirect(RouteServiceProvider::HOME)->with('message', "$restaurant->restaurant_name creato con successo.")->with('type', 'success');
@@ -83,6 +89,7 @@ class RestaurantController extends Controller
     public function show(string $id)
     {
         $restaurant = Restaurant::findOrFail($id);
+
         $auth_id = Auth::id();
 
         if ($auth_id == $restaurant->user_id) {
