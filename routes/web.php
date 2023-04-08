@@ -25,6 +25,7 @@ Route::get('/', [GuestHomeController::class, 'index'])->name('guest.home');
 Route::middleware('auth')->name('admin.')->prefix('/admin')->group(function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('home');
     Route::resource('foods', FoodController::class);
+    Route::patch('foods/patch/{id}', [FoodController::class, 'patch']);
     Route::resource('restaurants', RestaurantController::class);
 });
 
