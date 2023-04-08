@@ -18,7 +18,7 @@
       </a>
     </li>
     <li class="ms-xl-4 my-xl-3">
-      <a href="">
+      <a href="{{ route('admin.orders.index') }}">
         <i class="fa-solid fa-clipboard-list"></i>
         <span>Ordini</span>
       </a>
