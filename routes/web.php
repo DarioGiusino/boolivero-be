@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\FoodController;
 use App\Http\Controllers\admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\admin\RestaurantController;
 use App\Http\Controllers\guest\HomeController as GuestHomeController;
 use App\Http\Controllers\ProfileController;
@@ -26,6 +27,7 @@ Route::middleware('auth')->name('admin.')->prefix('/admin')->group(function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('home');
     Route::resource('foods', FoodController::class);
     Route::patch('foods/patch/{food}', [FoodController::class, 'patch'])->name('foods.patch');
+    Route::resource('orders', OrderController::class);
     Route::resource('restaurants', RestaurantController::class);
 });
 
