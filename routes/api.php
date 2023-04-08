@@ -27,3 +27,7 @@ Route::get('/restaurants/{restaurant}', [RestaurantController::class, 'show']);
 // # category apis
 Route::apiResource('/categories', CategoryController::class);
 Route::get('/categories/{id}/restaurants', [CategoryController::class, 'restaurantsByCategory']);
+
+
+// ! prova filtro
+Route::post('/ristoranti/filtro', [RestaurantController::class, 'fetchMultipleRestaurants']);

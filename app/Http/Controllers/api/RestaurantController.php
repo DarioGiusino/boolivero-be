@@ -51,4 +51,17 @@ class RestaurantController extends Controller
     {
         //
     }
+
+    // # prova filtro ristoranti
+    public function fetchMultipleRestaurants(Request $request)
+    {
+        if ($request->isMethod('post')) {
+            $data = $request->input();
+            foreach ($data as $key => $value) {
+                $items = Restaurant::join('category_restaurant', 'restaurants.id', '=', 'category_restaurant.restaurant_id')->where('restaurants.id', $data['selected_categories'])->get();
+            }
+            $result = json_encode($items, true);
+            return $result;
+        }
+    }
 }
