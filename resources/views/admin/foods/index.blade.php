@@ -32,8 +32,17 @@
 
               {{-- card switch (publish) --}}
               <div class="form-check form-switch p-0 text-end">
-                <label class="form-check-label"><i class="fa-solid fa-earth-europe"></i></label>
-                <input class="form-check-input float-none" type="checkbox" role="switch">
+                {{-- patch form --}}
+                <form action="{{ route('admin.foods.patch', $food->id) }}" method="POST">
+                  @method('patch')
+                  @csrf
+                  {{-- label --}}
+                  <label class="form-check-label text-{{ $food->is_published ? 'success' : 'danger' }}"><i
+                      class="fa-solid fa-earth-europe"></i></label>
+                  {{-- checkbox input --}}
+                  <input class="form-check-input float-none patch-checkbox" type="checkbox" role="switch"
+                    name='is_published' data-input="{{ $food->label }}" @checked (old('is_published', $food->is_published))>
+                </form>
               </div>
 
               {{-- card dropdown --}}
@@ -73,22 +82,26 @@
       <div class="modal fade" id="food-{{ $food->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          {{-- modal content with/without image --}}
           <div class="modal-content"
             @if ($food->image) style="background-image: url('{{ asset('storage/' . $food->image) }}')" @endif>
+            {{-- modal header --}}
             <div class="modal-header">
               <h1 class="modal-title fs-5">{{ $food->label }}</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            {{-- modal body --}}
             <div class="modal-body">
               <p class="mb-0">{{ $food->description }}</p>
             </div>
+            {{-- modal footer --}}
             <div class="modal-footer justify-content-between">
-              {{-- modal food price --}}
+              {{-- modal price --}}
               <div class="btn-info">
                 € {{ $food->price }}
               </div>
 
-              {{-- modal footer button --}}
+              {{-- modal button --}}
               <div>
                 {{-- edit link --}}
                 <a class="btn btn-sm btn-warning" href="{{ route('admin.foods.edit', $food->id) }}"><i
@@ -150,7 +163,14 @@
             {{-- table switch (publish) --}}
             <td>
               <div class="form-check form-switch p-0 m-0 pt-2 text-end">
-                <input class="form-check-input float-none m-0" type="checkbox" role="switch">
+                {{-- patch form --}}
+                <form action="{{ route('admin.foods.patch', $food->id) }}" method="POST">
+                  @method('patch')
+                  @csrf
+                  {{-- checkbox input --}}
+                  <input class="form-check-input float-none m-0 patch-checkbox" type="checkbox" role="switch"
+                    name='is_published' data-input="{{ $food->label }}" @checked (old('is_published', $food->is_published))>
+                </form>
               </div>
             </td>
 
@@ -163,8 +183,8 @@
                 {{-- dropdown list --}}
                 <ul class="dropdown-menu">
                   {{-- (fake)show button triggers the modal --}}
-                  <li><button data-bs-toggle="modal" data-bs-target="#food-{{ $food->id }}" class="dropdown-item"><i
-                        class="fa-solid fa-eye"></i> Vedi</button></li>
+                  <li><button data-bs-toggle="modal" data-bs-target="#food-{{ $food->id }}"
+                      class="dropdown-item"><i class="fa-solid fa-eye"></i> Vedi</button></li>
                   {{-- edit link --}}
                   <li><a class="dropdown-item" href="{{ route('admin.foods.edit', $food->id) }}"><i
                         class="fa-solid fa-sliders"></i> Modifica</a></li>

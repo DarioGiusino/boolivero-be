@@ -92,7 +92,7 @@ class FoodController extends Controller
         $food->save();
 
         // todo redirect to its details
-        return to_route('admin.foods.index')->with('message', "$food->label creato con successo.")->with('type', 'success');;
+        return to_route('admin.foods.index')->with('message', "$food->label creato con successo.")->with('type', 'success');
     }
 
     /**
@@ -169,6 +169,21 @@ class FoodController extends Controller
 
         $food->delete();
 
-        return to_route('admin.foods.index')->with('message', "$food->label cancellato con successo.")->with('type', 'danger');;
+        return to_route('admin.foods.index')->with('message', "$food->label cancellato con successo.")->with('type', 'danger');
+    }
+
+    /**
+     * Change the status of published food.
+     */
+    public function patch(Request $request, Food $food)
+    {
+        $data = $request->all();
+
+        // define publish or not
+        $data['is_published'] = Arr::exists($data, 'is_published');
+
+        $food->update($data);
+
+        return to_route('admin.foods.index')->with('message', "Lo stato di $food->label è stato modificato.")->with('type', 'info');
     }
 }
