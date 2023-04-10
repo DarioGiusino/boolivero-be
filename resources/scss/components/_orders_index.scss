@@ -1,0 +1,61 @@
+#orders-index {
+    //header
+    header {
+        a {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    //table
+    .table-price {
+        width: 67px;
+    }
+
+    // card switch
+    .form-switch {
+        .form-check-input {
+            margin-top: 0.35em;
+            margin-left: 0.25em;
+        }
+    }
+
+    // dropdown
+    .dropdown {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+
+    .btn {
+        border-color: transparent;
+        &:after {
+            content: none;
+        }
+    }
+
+    // modal
+    .modal-content {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        .modal-header,
+        .modal-body,
+        .modal-footer {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: #fff;
+
+            .btn-info {
+                background-color: #0dcaf0;
+                padding: 0.25rem 0.5rem;
+                border-radius: 0.25rem;
+                font-size: 0.875rem;
+                color: #000;
+            }
+        }
+    }
+}
