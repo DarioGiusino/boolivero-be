@@ -15,7 +15,7 @@ class Food extends Model
     //food_order relation
     public function orders()
     {
-        return $this->belongsToMany(Order::class);
+        return $this->belongsToMany(Order::class)->withPivot('quantity');
     }
 
     public function restaurant()

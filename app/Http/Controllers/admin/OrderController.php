@@ -16,7 +16,8 @@ class OrderController extends Controller
     {
         $restaurant_id = Auth::id();
 
-        $orders = Order::select('orders.*')->join('food_order', 'orders.id', '=', 'food_order.order_id')->join('foods', 'food_order.food_id', '=', 'foods.id')->join('restaurants', 'foods.restaurant_id', '=', 'restaurants.id')->orderBy('created_at', 'DESC')->groupBy('orders.id')->where('restaurant_id', $restaurant_id)->get();
+        $orders = Order::select(['orders.*'])->join('food_order', 'orders.id', '=', 'food_order.order_id')->join('foods', 'food_order.food_id', '=', 'foods.id')->join('restaurants', 'foods.restaurant_id', '=', 'restaurants.id')->groupBy(['orders.id'])->where('restaurant_id', $restaurant_id)->get();
+
 
         return view('admin.orders.index', compact('orders'));
     }
