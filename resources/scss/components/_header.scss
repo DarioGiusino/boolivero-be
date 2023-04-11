@@ -1,10 +1,14 @@
-/*.navbar {
+.navbar {
     background-color: $light_green;
     max-height: 66px;
 
     .logo {
         width: 40px;
     }
+}
+
+.lg {
+    color: $light_green;
 }
 
 .text-link {
@@ -22,7 +26,6 @@
         text-decoration: none;
     }
 }
-*/
 
 img {
     max-width: 100%;
@@ -38,9 +41,13 @@ li {
     list-style-type: none;
 }
 
-header {
+.bkg-b {
     background-color: black;
     max-height: 66px;
+}
+
+header {
+
 
     .logo {
         width: 200px;
@@ -66,7 +73,7 @@ header {
 
     .sign-up-button {
         color: white;
-        background-color: $primary;
+        background-color: $light_green;
         padding: 15px 125px;
         border-radius: 6px;
 
@@ -74,7 +81,7 @@ header {
     }
 
     .choose-your-button {
-        width: 350px;
+        width: 300px;
         height: 50px;
 
     }
