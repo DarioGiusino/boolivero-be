@@ -1,4 +1,4 @@
-.navbar {
+/*.navbar {
     background-color: $light_green;
     max-height: 66px;
 
@@ -21,4 +21,77 @@
         color: white;
         text-decoration: none;
     }
+}
+*/
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+header {
+    background-color: black;
+    max-height: 66px;
+
+    .logo {
+        width: 200px;
+    }
+
+    .nav-but {
+        background-color: white;
+        padding: 5px 10px;
+        border-radius: 6px;
+
+    }
+
+    .sub-menu-item {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .primary-icon {
+        color: $primary;
+        padding-right: 6px;
+
+    }
+
+    .sign-up-button {
+        color: white;
+        background-color: $primary;
+        padding: 15px 125px;
+        border-radius: 6px;
+
+
+    }
+
+    .choose-your-button {
+        width: 350px;
+        height: 50px;
+
+    }
+
+    .offcanvas-body {
+        position: relative;
+
+        .off-canvas-menu {
+            a {
+                color: black;
+            }
+        }
+    }
+
+    .region {
+        position: absolute;
+        bottom: 20px;
+    }
+
 }
