@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\CategoryController;
+use App\Http\Controllers\api\PaymentController;
 use App\Http\Controllers\api\RestaurantController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -27,3 +28,7 @@ Route::get('/restaurants/{restaurant}', [RestaurantController::class, 'show']);
 // # category apis
 Route::apiResource('/categories', CategoryController::class);
 Route::get('/categories/{id}/restaurants', [CategoryController::class, 'restaurantsByCategory']);
+
+// # payment apis
+Route::get('/ctoken', [PaymentController::class, 'getClientToken']);
+Route::get('/make-payment', [PaymentController::class, 'makePayment']);
