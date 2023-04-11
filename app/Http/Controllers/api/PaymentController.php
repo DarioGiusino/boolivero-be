@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\api;
 
+use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\Controller;
+use App\Models\Food;
 use Braintree\Gateway;
 use Illuminate\Http\Request;
 
@@ -22,7 +24,35 @@ class PaymentController extends Controller
     /**
      * method to make the payment
      */
-    public function makePayment()
+    public function makePayment(Request $request, Gateway $gateway)
     {
+        // get amount (total_price)
+        $amount = $this->getAmount($request->foods);
+
+        $result = $gateway->transaction()->sale([
+            'amount' => $amount,
+            'paymentMethodNonce' => $request->token,
+            'options' => [
+                'submitForSettlement' => True
+            ]
+        ]);
+
+        if ($result->success) {
+            return response('pagamento buono', 201);
+        }
+    }
+
+    /**
+     * get total_price from a foods array (given from front-end)
+     */
+    private function getAmount(array $foods)
+    {
+        $amount = 0;
+
+        foreach ($foods as $food) {
+            $amount += Food::findOrFail($food['id'])->price * $food['quantity'];
+        }
+
+        return $amount;
     }
 }
