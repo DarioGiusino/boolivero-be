@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\admin\FoodController;
 use App\Http\Controllers\admin\HomeController as AdminHomeController;
-use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\admin\RestaurantController;
 use App\Http\Controllers\guest\HomeController as GuestHomeController;
 use App\Http\Controllers\ProfileController;
