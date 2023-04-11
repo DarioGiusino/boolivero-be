@@ -31,4 +31,4 @@ Route::get('/categories/{id}/restaurants', [CategoryController::class, 'restaura
 
 // # payment apis
 Route::get('/ctoken', [PaymentController::class, 'getClientToken']);
-Route::get('/make-payment', [PaymentController::class, 'makePayment']);
+Route::post('/make-payment', [PaymentController::class, 'makePayment']);
