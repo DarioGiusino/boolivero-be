@@ -38,6 +38,9 @@ class PaymentController extends Controller
         ]);
 
         if ($result->success) {
+            $request['is_paid'] = true;
+            $request['total_price'] = $amount;
+            OrderController::store($request);
             return response('pagamento buono', 201);
         }
     }
