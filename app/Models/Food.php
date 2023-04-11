@@ -34,4 +34,11 @@ class Food extends Model
     {
         return Carbon::create($this->updated_at)->format('d/m/Y');
     }
+
+    //get total price x quantity ordered
+    public function getTotalPrice($food)
+    {
+        $total_price = $food->price * $food->pivot->quantity;
+        return number_format($total_price, 2);
+    }
 }

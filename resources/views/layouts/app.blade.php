@@ -39,7 +39,7 @@
         @yield('content')
       </div>
       {{-- main sidebar --}}
-      <div class="fb-10-md-20">
+      <div class="fb-10-md-20 flex-shrink-0">
         @include('includes.sidebar')
       </div>
     </main>

@@ -23,11 +23,17 @@
         }
     }
 
-    // dropdown
-    .dropdown {
+    // collapse
+    .collapse-btn {
         position: absolute;
         top: 5px;
         right: 5px;
+
+        .btn.collapsed {
+            i {
+                transform: rotate(180deg);
+            }
+        }
     }
 
     .btn {
@@ -48,14 +54,15 @@
         .modal-footer {
             background-color: rgba(0, 0, 0, 0.4);
             color: #fff;
-
-            .btn-info {
-                background-color: #0dcaf0;
-                padding: 0.25rem 0.5rem;
-                border-radius: 0.25rem;
-                font-size: 0.875rem;
-                color: #000;
-            }
         }
+    }
+
+    // button info for total price
+    .btn-info {
+        background-color: #0dcaf0;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        font-size: 0.875rem;
+        color: #000;
     }
 }
