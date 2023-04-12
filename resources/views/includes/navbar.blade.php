@@ -97,8 +97,8 @@
                       <a href="{{ route('login') }}" class=" sign-up-button">Sign up or login</a>
                     </div>
                   @else
-                    <div class="text-start">
-                      <a class="dropdown-item" href="{{ route('logout') }}"
+                    <div class="text-start my-5">
+                      <a class="sign-up-button" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                   document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
