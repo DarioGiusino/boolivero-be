@@ -16,10 +16,10 @@ use Illuminate\Http\Request;
 
 class RestaurantController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $restaurants = Restaurant::all();
-        return view('profile.restaurant.index', compact('restaurants'));
+        $restaurant = Restaurant::where('user_id', $request->user()->id)->get()[0];
+        return view('profile.restaurant.index', compact('restaurant'));
     }
 
     public function create()
@@ -34,14 +34,6 @@ class RestaurantController extends Controller
     }
     public function show(string $id)
     {
-        $restaurant = Restaurant::findOrFail($id);
-
-        $auth_id = Auth::id();
-
-        if ($auth_id == $restaurant->user_id) {
-            return view('profile.restaurant.index', compact('restaurant'));
-        }
-        return view('guest.home');
     }
     public function edit(Restaurant $restaurant)
     {
