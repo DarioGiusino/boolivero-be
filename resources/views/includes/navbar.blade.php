@@ -1,32 +1,33 @@
 <header>
   <div class="bkg-b">
     <div class="container">
-      <div class="row align-items-center">
+      <div class="navbar d-flex">
 
         <!-- logo -->
 
-        <div class="col-2 col-sm-4 col-md-3 col-lg-5 col-xl-6">
-          <a class="navbar-brand d-flex align-items-center" href="{{ url('/admin') }}">
+        <div>
             <div class="logo m-0">
+              <a href="{{ url('/admin') }}">
               <img
-                src="https://media.discordapp.net/attachments/1090194914433839158/1092735923176882276/Logo-BOOLIVEROO-WHITE.png?width=1440&height=490"
+                src="https://media.discordapp.net/attachments/1090194914433839158/1092735966432727070/Logo-BOOLIVEROO-PRIMARY.png?width=1440&height=490"
                 alt="logo-deliveroo" class="img-fluid">
-            </div>
-          </a>
+              </a>
+              </div>
         </div>
+        
 
 
         <!-- navbar-menu -->
-        <div class="col-8 col-sm-8 col-md-9 col-lg-7 col-xl-6">
-          <ul class="row text-end mb-0">
+        <div class="navbar-menu">
+          <ul class="d-flex mb-0">
 
             <!-- PARTNER WITH US -->
-            <li class="d-none d-md-block col-md-4">
+            <li>
               <div class="partner-with-us">
                 <div class="dropdown">
                   <button class="btn nav-but" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false" id="partner-dropdown">
-                    <span style="font-size:0.75rem;"><i class="lg fa-solid fa-chevron-down"></i>Partner with us</span>
+                    <span style="font-size:0.9rem;"><i class="lg fa-solid fa-chevron-down"></i>Partner with us</span>
                   </button>
 
                   <!-- SUB-MENU -->
@@ -47,28 +48,30 @@
             </li>
 
             <!-- CART -->
-            <li class="d-none d-sm-block col-sm-3 col-md-2">
+            <li class="cart">
               <button class="btn nav-but" aria-current="page" href="#">
-                <span style="font-size:0.63rem;"><i class="lg fa-solid fa-cart-shopping"></i>$0.00</span>
+                <span style="font-size:0.8rem;"><i class="lg fa-solid fa-cart-shopping"></i>$0.00</span>
               </button>
             </li>
 
             <!-- SIGN UP -->
-            <li class=" col-8  col-sm-5 col-md-3">
+            @guest
+            <li class="login">
               <a href="http://127.0.0.1:8000/login">
                 <button class="btn nav-but" href="#">
-                  <span style="font-size:0.63rem;"><i class="lg fa-solid fa-house"></i>Sign up or
+                  <span style="font-size:0.8rem;"><i class="lg fa-solid fa-house"></i>Sign up or
                     login</span>
                 </button>
               </a>
             </li>
+            @endguest
 
 
             <!-- MENU -->
 
-            <li class="col-4 col-sm-3  col-md-2">
+            <li class="menu">
               <button class="btn nav-but" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                aria-controls="offcanvasRight"><span style="font-size:0.63rem;"><i
+                aria-controls="offcanvasRight"><span style="font-size:0.9rem;"><i
                     class="lg fa-solid fa-bars"></i>Menu</span></button>
 
               <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
@@ -81,23 +84,23 @@
                       src="https://media.discordapp.net/attachments/1090194914433839158/1092736001354518528/Logo-COLORATO-BOOLEVEROO-.png?width=1440&height=490"
                       alt="logo-deliveroo" class="img-fluid ">
 
-                    <button type="button" class="btn-close ms-5 " data-bs-dismiss="offcanvas"
+                    <button type="button" class="btn-close m-0 " data-bs-dismiss="offcanvas"
                       aria-label="Close"></button>
                   </div>
 
 
                 </div>
 
-                <div class="offcanvas-body">
+                <div class="offcanvas-body text-center">
                   <hr>
                   <!-- OFFCANVAS SIGN UP BUTTON -->
 
                   @guest
-                    <div class="text-start my-5">
+                    <div class="my-5">
                       <a href="{{ route('login') }}" class=" sign-up-button">Sign up or login</a>
                     </div>
                   @else
-                    <div class="text-start my-5">
+                    <div class="my-5">
                       <a class="sign-up-button" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                   document.getElementById('logout-form').submit();">
@@ -183,7 +186,6 @@
                 </div>
               </div>
             </li>
-
           </ul>
         </div>
       </div>
