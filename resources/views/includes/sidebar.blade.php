@@ -12,6 +12,12 @@
       </a>
     </li>
     <li class="ms-xl-4 my-xl-3">
+      <a href="{{ route('admin.restaurants.index') }}">
+        <i class="fa-solid fa-burger"></i>
+        <span>Ristorante</span>
+      </a>
+    </li>
+    <li class="ms-xl-4 my-xl-3">
       <a href="{{ route('admin.foods.index') }}">
         <i class="fa-solid fa-burger"></i>
         <span>Menù</span>

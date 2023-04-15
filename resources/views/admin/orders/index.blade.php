@@ -183,7 +183,7 @@
             <td>{{ $order->getDate() }}</td>
 
             {{-- total_price --}}
-            <td class="table-price">€ {{ $order->total_price }}</td>
+            <td class="table-price">€{{ $order->total_price }}</td>
 
             {{-- is_paid --}}
             <td class="text-center">
