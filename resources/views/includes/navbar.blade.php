@@ -6,15 +6,15 @@
         <!-- logo -->
 
         <div>
-            <div class="logo m-0">
-              <a href="{{ url('/admin') }}">
+          <div class="logo m-0">
+            <a href="{{ env('APP_FRONTEND_URL') }}">
               <img
                 src="https://media.discordapp.net/attachments/1090194914433839158/1092735966432727070/Logo-BOOLIVEROO-PRIMARY.png?width=1440&height=490"
                 alt="logo-deliveroo" class="img-fluid">
-              </a>
-              </div>
+            </a>
+          </div>
         </div>
-        
+
 
 
         <!-- navbar-menu -->
@@ -56,14 +56,14 @@
 
             <!-- SIGN UP -->
             @guest
-            <li class="login">
-              <a href="http://127.0.0.1:8000/login">
-                <button class="btn nav-but" href="#">
-                  <span style="font-size:0.8rem;"><i class="lg fa-solid fa-house"></i>Sign up or
-                    login</span>
-                </button>
-              </a>
-            </li>
+              <li class="login">
+                <a href="http://127.0.0.1:8000/login">
+                  <button class="btn nav-but" href="#">
+                    <span style="font-size:0.8rem;"><i class="lg fa-solid fa-house"></i>Sign up or
+                      login</span>
+                  </button>
+                </a>
+              </li>
             @endguest
 
 
