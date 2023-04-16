@@ -184,6 +184,11 @@
                 </div>
               </div>
             </form>
+
+            {{-- go back button --}}
+            <div class="d-flex align-items-center justify-content-end">
+              <a href="{{ URL::previous() }}" class="btn btn-sm btn-secondary">Torna indietro</a>
+            </div>
           </div>
         </div>
       </div>
