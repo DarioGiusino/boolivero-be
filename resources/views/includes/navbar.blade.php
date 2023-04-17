@@ -61,7 +61,7 @@
 
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
               aria-labelledby="offcanvasRightLabel">
-              <div class="offcanvas-header">
+              <div class="offcanvas-header flex-column">
                 <!-- LOGO AND CLOSE UP BUTTON-->
                 <div class="logo2 d-flex justify-content-between align-items-center">
                   <img
@@ -71,10 +71,23 @@
                   <button type="button" class="btn-close m-0" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
 
+                {{-- !! if auth, show resturant name --}}
+                @auth
+                  <div class="mt-2 d-flex align-items-center align-self-end">
+                    {{-- restaurant_name --}}
+                    <span>{{ Auth::user()->restaurant->restaurant_name }}</span>
+
+                    {{-- restaurant_image --}}
+                    <figure class="nav-restaurant-banner ms-2">
+                      <img src="{{ Auth::user()->restaurant->banner }}" alt="user-image">
+                    </figure>
+                  </div>
+                @endauth
+
 
               </div>
 
-              <div class="offcanvas-body text-center">
+              <div class="offcanvas-body text-center pt-0">
                 <hr>
                 <!-- OFFCANVAS SIGN UP BUTTON -->
                 @guest
@@ -149,20 +162,6 @@
               </div>
             </div>
           </li>
-
-          {{-- !! if auth, show resturant name --}}
-          @auth
-            <li class="ms-2 text-white d-flex align-items-center">
-              {{-- restaurant_name --}}
-              <span>{{ Auth::user()->restaurant->restaurant_name }}</span>
-
-              {{-- restaurant_image --}}
-              <figure class="nav-restaurant-banner ms-2">
-                <img src="{{ Auth::user()->restaurant->banner }}" alt="user-image">
-              </figure>
-            </li>
-          @endauth
-
         </ul>
       </div>
     </div>
