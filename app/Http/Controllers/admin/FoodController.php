@@ -20,6 +20,12 @@ class FoodController extends Controller
     {
         $restaurant_id = Auth::id();
         $foods = Food::orderBy('updated_at', 'DESC')->where('restaurant_id', $restaurant_id)->get();
+
+        // check if the image is saved as an absolute link or is stored in app storage
+        foreach ($foods as $food) {
+            $food->image = str_starts_with($food->image, 'http') ? $food->image : asset('storage/' . $food->image);
+        }
+
         return view('admin.foods.index', compact('foods'));
     }
 

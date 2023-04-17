@@ -84,7 +84,7 @@
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
           {{-- modal content with/without image --}}
           <div class="modal-content"
-            @if ($food->image) style="background-image: url('{{ asset('storage/' . $food->image) }}')" @endif>
+            @if ($food->image) style="background-image: url('{{ $food->image }}')" @endif>
             {{-- modal header --}}
             <div class="modal-header">
               <h1 class="modal-title fs-5">{{ $food->label }}</h1>

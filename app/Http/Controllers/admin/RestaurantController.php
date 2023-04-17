@@ -19,6 +19,10 @@ class RestaurantController extends Controller
     public function index(Request $request)
     {
         $restaurant = Restaurant::where('user_id', $request->user()->id)->get()[0];
+
+        // check if the image is saved as an absolute link or is stored in app storage
+        $restaurant->banner = str_starts_with($restaurant->banner, 'http') ? $restaurant->banner : asset('storage/' . $restaurant->banner);
+
         return view('profile.restaurant.index', compact('restaurant'));
     }
 
