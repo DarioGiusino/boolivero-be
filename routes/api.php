@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\CategoryController;
+use App\Http\Controllers\api\ContactController;
 use App\Http\Controllers\api\PaymentController;
 use App\Http\Controllers\api\RestaurantController;
 use Illuminate\Http\Request;
@@ -32,3 +33,6 @@ Route::get('/categories/{id}/restaurants', [CategoryController::class, 'restaura
 // # payment apis
 Route::get('/ctoken', [PaymentController::class, 'getClientToken']);
 Route::post('/make-payment', [PaymentController::class, 'makePayment']);
+
+// # emails apis
+Route::post('/contact-message', [ContactController::class, 'send']);
