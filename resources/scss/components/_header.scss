@@ -1,38 +1,56 @@
-.navbar {
+@media only screen and (max-width: 778px) {
+    .contact-us {
+        display: none;
+    }
+
+    .login {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .cart {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 554px) {
+    .login {
+        display: none;
+    }
+}
+
+header {
+    background-color: black;
+
+    li {
+        list-style-type: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .nav-restaurant-banner {
+        margin-bottom: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid transparent;
+        overflow: hidden;
+
+        img {
+            width: auto;
+            height: 100%;
+        }
+    }
 
     .logo {
         width: 200px;
     }
-}
 
-.lg {
-    color: $light_green;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-
-a {
-    text-decoration: none;
-}
-
-li {
-    list-style-type: none;
-}
-
-.bkg-b {
-    background-color: black;
-    height: 84.13px;
-}
-
-header {
-
-
-    .logo {
-        width: 200px;
+    .logo2 {
+        width: 350px;
     }
 
     .nav-but {
@@ -40,7 +58,6 @@ header {
         padding: 5px 10px;
         border-radius: 6px;
         margin-left: 5px;
-
     }
 
     .sub-menu-item {
@@ -51,7 +68,6 @@ header {
     .primary-icon {
         color: $light_green;
         padding-right: 6px;
-
     }
 
     .sign-up-button {
@@ -59,14 +75,11 @@ header {
         background-color: $light_green;
         padding: 15px 100px;
         border-radius: 6px;
-
-
     }
 
     .choose-your-button {
-        width: 300px;
+        width: 350px;
         height: 50px;
-
     }
 
     .offcanvas-body {
@@ -79,35 +92,19 @@ header {
         }
     }
 
-    .region {
-        position: absolute;
-        bottom: 20px;
+    .my-rounded {
+        margin-top: 5px;
+        border-radius: 33px;
+        padding: 2rem;
+        width: 85%;
     }
-
-
 }
 
-@media only screen and (max-width: 778px) {
-    .partner-with-us {
-        display: none;
+.btn-menu {
+    color: black;
+
+    &:hover {
+        color: $light_green;
+        font-size: 18px;
     }
-
-    .login {
-        display: none;
-    }
-
-}
-
-@media only screen and (max-width: 650px) {
-    .cart {
-        display: none;
-    }
-
-}
-
-@media only screen and (max-width: 554px) {
-    .login {
-        display: none;
-    }
-
 }

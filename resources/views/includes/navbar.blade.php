@@ -1,193 +1,169 @@
 <header>
-  <div class="bkg-b">
-    <div class="container">
-      <div class="navbar d-flex">
+  <div class="container-fluid">
+    <div class="navbar d-flex">
 
-        <!-- logo -->
+      <!-- logo -->
 
-        <div>
-          <div class="logo m-0">
-            <a href="{{ env('APP_FRONTEND_URL') }}">
-              <img
-                src="https://media.discordapp.net/attachments/1090194914433839158/1092735966432727070/Logo-BOOLIVEROO-PRIMARY.png?width=1440&height=490"
-                alt="logo-deliveroo" class="img-fluid">
-            </a>
-          </div>
+      <div>
+        <div class="logo m-0 ms-3">
+          <a href="{{ env('APP_FRONTEND_URL') }}">
+            <img
+              src="https://media.discordapp.net/attachments/1090194914433839158/1092735966432727070/Logo-BOOLIVEROO-PRIMARY.png?width=1440&height=490"
+              alt="logo-deliveroo" class="img-fluid">
+          </a>
         </div>
+      </div>
 
 
 
-        <!-- navbar-menu -->
-        <div class="navbar-menu">
-          <ul class="d-flex mb-0">
+      <!-- navbar-menu -->
+      <div class="navbar-menu">
+        <ul class="d-flex mb-0 align-items-center">
 
-            <!-- PARTNER WITH US -->
-            <li>
-              <div class="partner-with-us">
-                <div class="dropdown">
-                  <button class="btn nav-but" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false" id="partner-dropdown">
-                    <span style="font-size:0.9rem;"><i class="lg fa-solid fa-chevron-down"></i>Partner with us</span>
-                  </button>
+          <!-- CONTACT US -->
+          <li>
+            <div class="contact-us">
+              <a class="btn nav-but" aria-current="page" href="http://localhost:5174/contact">
+                <span style="font-size:0.9rem;"><i class="primary-icon fa-solid fa-user"></i>Contattaci</span>
+              </a>
+            </div>
+          </li>
 
-                  <!-- SUB-MENU -->
-                  <ul class="dropdown-menu" aria-labelledby="partner-dropdown">
-                    <li><a class="dropdown-item sub-menu-item" href="#"><span><i
-                            class=" lg fa-solid fa-bicycle"></i>Riders</span></a></li>
-                    <li><a class="dropdown-item sub-menu-item" href="#"><span><i
-                            class="lg fa-solid fa-utensils"></i>Restaurants</span></a>
-                    </li>
-                    <li><a class="dropdown-item sub-menu-item" href="#"><span><i
-                            class="lg fa-solid fa-briefcase"></i>Riders</span></a>
-                    </li>
-                    <li><a class="dropdown-item sub-menu-item" href="#"><span><i
-                            class="lg fa-solid fa-shop"></i>Riders</span></a></li>
-                  </ul>
+          <!-- CART -->
+          {{-- <li v-if="$store.state.cart.length" class="cart">
+              <router-link class="btn nav-but" :class="$route.name == 'Cart' ? 'active' : ''" aria-current="page"
+                :to="{ name: 'cart', params: { component: Cart } }">
+                <i class="primary-icon fa-solid fa-cart-shopping"></i>
+                <span v-if="$store.state.cart.length > 0">
+                  {{ $store . state . cart . length }}
+                </span>
+              </router-link>
+            </li> --}}
+
+          <!-- SIGN UP -->
+          @guest
+            <li class="login">
+              <a href="{{ route('login') }}">
+                <button class="btn nav-but">
+                  <span style="font-size:0.8rem;"><i class="primary-icon fa-solid fa-house"></i>Accedi o
+                    Registrati</span>
+                </button>
+              </a>
+            </li>
+          @endguest
+
+
+          <!-- MENU -->
+          <li class="menu me-3">
+            <button class="btn nav-but" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight"><span style="font-size:0.9rem;"><i
+                  class="primary-icon fa-solid fa-bars"></i>Menu</span></button>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+              aria-labelledby="offcanvasRightLabel">
+              <div class="offcanvas-header">
+                <!-- LOGO AND CLOSE UP BUTTON-->
+                <div class="logo2 d-flex justify-content-between align-items-center">
+                  <img
+                    src="https://media.discordapp.net/attachments/1090194914433839158/1092736001354518528/Logo-COLORATO-BOOLEVEROO-.png?width=1440&height=490"
+                    alt="logo-deliveroo" class="img-fluid w-50">
+
+                  <button type="button" class="btn-close m-0" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
+
+
               </div>
-            </li>
 
-            <!-- CART -->
-            <li class="cart">
-              <button class="btn nav-but" aria-current="page" href="#">
-                <span style="font-size:0.8rem;"><i class="lg fa-solid fa-cart-shopping"></i>$0.00</span>
-              </button>
-            </li>
+              <div class="offcanvas-body text-center">
+                <hr>
+                <!-- OFFCANVAS SIGN UP BUTTON -->
+                @guest
+                  <div class="my-5">
+                    <a href="{{ route('login') }}" class=" sign-up-button">Accedi o Registrati</a>
+                  </div>
+                @else
+                  <div class="my-5">
+                    <a class="sign-up-button" href="{{ route('logout') }}"
+                      onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                      {{ __('Logout') }}
+                    </a>
+                  </div>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                  </form>
+                @endguest
 
-            <!-- SIGN UP -->
-            @guest
-              <li class="login">
-                <a href="http://127.0.0.1:8000/login">
-                  <button class="btn nav-but" href="#">
-                    <span style="font-size:0.8rem;"><i class="lg fa-solid fa-house"></i>Sign up or
-                      login</span>
-                  </button>
-                </a>
-              </li>
-            @endguest
+                <!-- OFFCANVAS MENU -->
+                <div class="container-fluid off-canvas-menu">
+                  <div class="row text-start">
 
+                    {{-- <!-- CART -->
+                    <div class="col-12 mb-3">
+                      <router-link v-if="$store.state.cart.length" class="p-0 m-0 nav-but" aria-current="page"
+                        :to="{ name: 'cart', params: { component: Cart } }">
+                        <i class="pe-3 fa-solid fa-cart-shopping text-secondary"></i>
+                        Vai al Carrello
 
-            <!-- MENU -->
+                        <span v-if="$store.state.cart.length > 0">
+                          + <i :class="`fa-beat fa-xs fa-solid fa-${$store.state.cart.length}`"></i>
+                        </span>
+                      </router-link>
+                    </div> --}}
 
-            <li class="menu">
-              <button class="btn nav-but" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                aria-controls="offcanvasRight"><span style="font-size:0.9rem;"><i
-                    class="lg fa-solid fa-bars"></i>Menu</span></button>
+                    <!-- LINKS -->
+                    <div class="col-12">
 
-              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
-                aria-labelledby="offcanvasRightLabel">
-                <div class="offcanvas-header ">
-                  <!-- LOGO AND CLOSE UP BUTTON-->
+                      <div class="d-flex flex-column menu-sidebar">
+                        <a href="http://localhost:5174/restaurants" class="pb-1">
+                          <button data-bs-toggle="offcanvas" class="btn btn-link text-decoration-none btn-menu"><span><i
+                                class="fa-solid fa-utensils pe-3 text-secondary"></i>I
+                              nostri ristoranti</span></button>
+                        </a>
+                        <a href="http://localhost:5174/about_us" class="pb-1">
+                          <button data-bs-toggle="offcanvas" class="btn btn-link text-decoration-none btn-menu"><span><i
+                                class="fa-solid fa-industry pe-3 text-secondary"></i>Chi
+                              siamo</span></button>
+                        </a>
+                        <a href="http://localhost:5174/contact" class="pb-1">
+                          <button data-bs-toggle="offcanvas" class="btn btn-link text-decoration-none btn-menu"><span><i
+                                class="fa-regular fa-envelope pe-3 text-secondary"></i>Contatti</span></button>
+                        </a>
+                        <a href="http://localhost:5174/careers" class="pb-1">
+                          <button data-bs-toggle="offcanvas" class="btn btn-link text-decoration-none btn-menu"><span><i
+                                class="fa-solid fa-briefcase pe-3 text-secondary"></i>Lavora
+                              con noi</span></button>
+                        </a>
+                        <a href="http://localhost:5174/faqs" class="pb-1">
+                          <button data-bs-toggle="offcanvas" class="btn btn-link text-decoration-none btn-menu"><span><i
+                                class="fa-solid fa-circle-question pe-3 text-secondary"></i>FAQs</span></button>
+                        </a>
+                      </div>
 
-                  <div class="logo d-flex align-items-center">
-                    <img
-                      src="https://media.discordapp.net/attachments/1090194914433839158/1092736001354518528/Logo-COLORATO-BOOLEVEROO-.png?width=1440&height=490"
-                      alt="logo-deliveroo" class="img-fluid ">
+                    </div>
 
-                    <button type="button" class="btn-close m-0 " data-bs-dismiss="offcanvas"
-                      aria-label="Close"></button>
                   </div>
 
 
                 </div>
-
-                <div class="offcanvas-body text-center">
-                  <hr>
-                  <!-- OFFCANVAS SIGN UP BUTTON -->
-
-                  @guest
-                    <div class="my-5">
-                      <a href="{{ route('login') }}" class=" sign-up-button">Sign up or login</a>
-                    </div>
-                  @else
-                    <div class="my-5">
-                      <a class="sign-up-button" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                  document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                      </a>
-                    </div>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                      @csrf
-                    </form>
-
-                  @endguest
-
-
-
-
-                  <!-- OFFCANVAS MENU -->
-                  <div class="container off-canvas-menu">
-                    <div class="row text-start ms-4">
-
-                      <!-- CART -->
-                      <div class="col-12 mb-3">
-                        <a href="#"><span><i
-                              class="fa-solid fa-cart-shopping text-secondary pe-3"></i>$0.00</span></a>
-                      </div>
-
-                      <!-- RIDER -->
-                      <div class="col-12 mb-3">
-                        <a href="#"><span><i class="fa-solid fa-bicycle pe-3 text-secondary"></i>Become a
-                            Rider</span></a>
-                      </div>
-
-                      <!-- RESTAURANT -->
-                      <div class="col-12 mb-3">
-                        <a href="#"><span><i class="fa-solid fa-utensils pe-3 text-secondary"></i>Add your
-                            restaurant</span></a>
-                      </div>
-
-                      <!-- OFFICE -->
-                      <div class="col-12 mb-3">
-                        <a href="#"><span><i class="fa-solid fa-briefcase pe-3 text-secondary"></i>Sign up
-                            your
-                            office</span></a>
-                      </div>
-
-                      <!-- FAQS -->
-                      <div class="col-12">
-                        <a href="#"><span><i
-                              class="fa-solid fa-circle-question pe-3 text-secondary"></i>FAQs</span></a>
-                      </div>
-
-                    </div>
-
-                    <!-- region LANGUAGE  -->
-
-                    <div class="region ms-4">
-                      <div class="languages">
-                        <select name="languages" id="languages" class="choose-your-button mx-auto">
-                          <option value="">English</option>
-                        </select>
-                      </div>
-
-                      <div class="country mt-4">
-                        <select name="country" id="country" class="choose-your-button mx-auto">
-                          <option value="">United Kingdom</option>
-                          <option value="">Australia</option>
-                          <option value="">Belgium</option>
-                          <option value="">France</option>
-                          <option value="">Fermany</option>
-                          <option value="">Hong Kong</option>
-                          <option value="">Ireland</option>
-                          <option value="" selected>Italy</option>
-                          <option value="">Kuwait</option>
-                          <option value="">Netherlands</option>
-                          <option value="">Qatar</option>
-                          <option value="">Singapore</option>
-                          <option value="">Spain</option>
-                          <option value="">Taiwan</option>
-                          <option value="">United Arab Emirates</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
+            </div>
+          </li>
+
+          {{-- !! if auth, show resturant name --}}
+          @auth
+            <li class="ms-2 text-white d-flex align-items-center">
+              {{-- restaurant_name --}}
+              <span>{{ Auth::user()->restaurant->restaurant_name }}</span>
+
+              {{-- restaurant_image --}}
+              <figure class="nav-restaurant-banner ms-2">
+                <img src="{{ Auth::user()->restaurant->banner }}" alt="user-image">
+              </figure>
             </li>
-          </ul>
-        </div>
+          @endauth
+
+        </ul>
       </div>
     </div>
   </div>
