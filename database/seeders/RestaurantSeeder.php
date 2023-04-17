@@ -14,120 +14,94 @@ class RestaurantSeeder extends Seeder
      */
     public function run(): void
     {
-        $users_id = User::pluck('id')->toArray();
+        // get every user created
+        $users_ids = User::pluck('id')->toArray();
 
-        $new_restaurant = new Restaurant();
-
-        $new_restaurant->user_id = $users_id[0];
-        $new_restaurant->restaurant_name = 'Admin restaurant';
-        $new_restaurant->address = 'Via Boolean, 83';
-        $new_restaurant->p_iva = '86334519757';
-        $new_restaurant->banner = 'https://picsum.photos/536/354';
-        $new_restaurant->vote = 3.4;
-
-        $new_restaurant->save();
-
-        $new_second_resturant = new Restaurant();
-        $new_second_resturant->user_id = $users_id[1];
-        $new_second_resturant->restaurant_name = 'Pizzeria Ciro';
-        $new_second_resturant->address = 'Via Boolean, 88';
-        $new_second_resturant->p_iva = '86334519758';
-        $new_second_resturant->banner = 'https://picsum.photos/536/354';
-        $new_second_resturant->vote = 2.4;
-
-        $new_second_resturant->save();
-
-        $new_third_resturant = new Restaurant();
-        $new_third_resturant->user_id = $users_id[2];
-        $new_third_resturant->restaurant_name = 'Al Gelatone';
-        $new_third_resturant->address = 'Via Boolean, 81';
-        $new_third_resturant->p_iva = '86334519759';
-        $new_third_resturant->banner = 'https://picsum.photos/536/354';
-        $new_third_resturant->vote = 4.4;
-
-        $new_third_resturant->save();
-
-
-        $new_fourth_resturant = new Restaurant();
-        $new_fourth_resturant->user_id = $users_id[3];
-        $new_fourth_resturant->restaurant_name = 'Paninoteca Guzza';
-        $new_fourth_resturant->address = 'Via Boolean, 100';
-        $new_fourth_resturant->p_iva = '86334519753';
-        $new_fourth_resturant->banner = 'https://picsum.photos/536/354';
-        $new_fourth_resturant->vote = 1.2;
-
-        $new_fourth_resturant->save();
-
-        /*$restaurants = [
+        // restaurants list (one for each user)
+        $restaurants = [
             [
-                
-                'restaurant_name' => 'Pizzeria Ciro',
-                'user_id' => 1,
-                'address' => 'Via del Baffo, 14',
-                'p_iva' => '86334519751',
-                'banner' => 'https://picsum.photos/536/354',
-                'vote' => '4.1',
+                'restaurant_name' => 'Team 5 de "Classe 83"',
+                'address' => 'Via Boolean, 83',
+                'p_iva' => '83838383838',
+                'banner' => 'https://yt3.googleusercontent.com/UXFC9eFKxjbOcUeEiIFqpywdInXJijIrh5bkfUMPlKhCLKaO6rrTfh5O5IzNTS_2Wap2yBk1J44=s900-c-k-c0x00ffffff-no-rj',
+                'vote' => '5',
             ],
             [
-                'restaurant_name' => 'Al Gelatone',
-                'user_id' => 2,
-                'address' => 'Via delle Magnolie, 89',
-                'p_iva' => '86334519752',
-                'banner' => 'https://picsum.photos/536/354',
-                'vote' => '2.5',
+                'restaurant_name' => 'Bufalero',
+                'address' => 'Via Passo del Turchino, 18',
+                'p_iva' => '12345678901',
+                'banner' => 'https://media-cdn.tripadvisor.com/media/photo-p/1b/61/1a/b8/wagyu.jpg',
+                'vote' => '4',
             ],
             [
-                'restaurant_name' => 'Paninoteca Guzza',
-                'user_id' => 3,
-                'address' => 'Via calzone, 18',
-                'p_iva' => '86334519753',
-                'banner' => 'https://picsum.photos/536/354',
-                'vote' => '3.2',
+                'restaurant_name' => 'Vuliò',
+                'address' => 'Via degli Scipioni, 55',
+                'p_iva' => '12345678902',
+                'banner' => 'https://media-cdn.tripadvisor.com/media/photo-s/12/8e/21/58/l-aperipuglia.jpg',
+                'vote' => '3',
             ],
             [
-                'restaurant_name' => 'Kalos',
-                'user_id' => 0,
-                'address' => 'Via Terrasini, 57',
-                'p_iva' => '86334519754',
-                'banner' => 'https://picsum.photos/536/354',
-                'vote' => '1.6',
+                'restaurant_name' => 'Porcadella',
+                'address' => 'Via Marcantonio Colonna, 42',
+                'p_iva' => '12345678903',
+                'banner' => 'https://media-cdn.tripadvisor.com/media/photo-s/1c/44/5b/0c/la-sentenza-out.jpg',
+                'vote' => '2',
             ],
             [
-                'restaurant_name' => 'Sushi Wong',
-                'user_id' => 0,
-                'address' => 'Via Yoshimizu, 90',
-                'p_iva' => '86334519755',
-                'banner' => 'https://picsum.photos/536/354',
-                'vote' => '3.7',
+                'restaurant_name' => 'Sesamo Trastevere',
+                'address' => 'Viale di Trastevere, 83',
+                'p_iva' => '12345678904',
+                'banner' => 'https://media-cdn.tripadvisor.com/media/photo-s/21/78/42/55/sesamo-trastevere.jpg',
+                'vote' => '3',
             ],
             [
-                'restaurant_name' => 'Sakura',
-                'user_id' => 0,
-                'address' => 'Via degli Anime, 33',
-                'p_iva' => '86334519756',
-                'banner' => 'https://picsum.photos/536/354',
-                'vote' => '4.3',
+                'restaurant_name' => 'DOC Cruderia EnoBistrot',
+                'address' => 'Via Pietro Manzi, 1',
+                'p_iva' => '12345678905',
+                'banner' => 'https://media-cdn.tripadvisor.com/media/photo-s/22/4f/41/f8/le-nostre-specialita.jpg',
+                'vote' => '4',
             ],
             [
-                'restaurant_name' => 'Da Mindu',
-                'user_id' => 0,
-                'address' => 'Via dei molti nomi, 5',
-                'p_iva' => '86334519758',
-                'banner' => 'https://picsum.photos/536/354',
-                'vote' => '4.7',
+                'restaurant_name' => 'Pinsitaly Trevi',
+                'address' => 'Via della Panetteria, 12',
+                'p_iva' => '12345678906',
+                'banner' => 'https://media-cdn.tripadvisor.com/media/photo-s/26/c4/88/0c/2nd-year-travellers-choice.jpg',
+                'vote' => '1',
             ],
-        ];*/
+            [
+                'restaurant_name' => 'Trecaffè Leone IV',
+                'address' => 'Via Leone IV, 10',
+                'p_iva' => '12345678907',
+                'banner' => 'https://media-cdn.tripadvisor.com/media/photo-s/25/c2/ea/83/amatriciana-con-guanciale.jpg',
+                'vote' => '5',
+            ],
+            [
+                'restaurant_name' => 'StuPisci',
+                'address' => 'Via Bellinzona, 11',
+                'p_iva' => '12345678908',
+                'banner' => 'https://media-cdn.tripadvisor.com/media/photo-s/21/96/22/81/stupisci-menu.jpg',
+                'vote' => '3',
+            ],
+            [
+                'restaurant_name' => 'Ramè Sushi Naturale Italiano',
+                'address' => 'Via Folco Portinari, 33',
+                'p_iva' => '12345678909',
+                'banner' => 'https://media-cdn.tripadvisor.com/media/photo-s/1c/5b/0b/4b/t.jpg',
+                'vote' => '2',
+            ],
+        ];
 
-        /*foreach ($restaurants as $restaurant) {
-            $new_second_resturant = new Restaurant();
-            $new_second_resturant->restaurant_name = $restaurant['restaurant_name'];
-            $new_second_resturant->user_id = $users_id['user_id'];
-            $new_second_resturant->address = $restaurant['address'];
-            $new_second_resturant->p_iva = $restaurant['p_iva'];
-            $new_second_resturant->banner = $restaurant['banner'];
-            $new_second_resturant->vote = $restaurant['vote'];
+        foreach ($restaurants as $key => $restaurant) {
+            $new_restaurant = new Restaurant();
 
-            $new_second_resturant->save();
-        }*/
+            $new_restaurant->user_id = $users_ids[$key];
+            $new_restaurant->restaurant_name = $restaurant['restaurant_name'];
+            $new_restaurant->address = $restaurant['address'];
+            $new_restaurant->p_iva = $restaurant['p_iva'];
+            $new_restaurant->banner = $restaurant['banner'];
+            $new_restaurant->vote = $restaurant['vote'];
+
+            $new_restaurant->save();
+        }
     }
 }

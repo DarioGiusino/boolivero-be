@@ -13,31 +13,64 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $new_user = new User();
-        $new_user->name = 'Admin';
-        $new_user->email = 'admin@boolivero.com';
-        $new_user->password = bcrypt('password');
-        $new_user->save();
-
+        // new users list
         $new_users = [
             [
-                'name' => 'Ristoro',
-                'email' => 'ristoro@gmail.it',
-                'password' => bcrypt('password1'),
+                'name' => 'Admin',
+                'email' => 'admin@boolivero.com',
+                'password' => bcrypt('password'),
             ],
             [
-                'name' => 'Food Express',
-                'email' => 'ciboveloce@gmail.com',
-                'password' => bcrypt('password2'),
+                'name' => 'Massimo Bottura',
+                'email' => 'bufalero@boolivero.com',
+                'password' => bcrypt('password'),
             ],
             [
-                'name' => 'Luigi',
-                'email' => 'pranzo@gmail.com',
-                'password' => bcrypt('password3'),
+                'name' => 'Gualtiero Marchesi',
+                'email' => 'vulio@boolivero.com',
+                'password' => bcrypt('password'),
+            ],
+            [
+                'name' => 'Gianfranco Vissani',
+                'email' => 'porcadella@boolivero.com',
+                'password' => bcrypt('password'),
+            ],
+            [
+                'name' => 'Davide Oldani',
+                'email' => 'sesamotrastevere@boolivero.com',
+                'password' => bcrypt('password'),
+            ],
+            [
+                'name' => 'Cristina Bowerman',
+                'email' => 'enobistrot@boolivero.com',
+                'password' => bcrypt('password'),
+            ],
+            [
+                'name' => 'Carlo Cracco',
+                'email' => 'pinsitaly@boolivero.com',
+                'password' => bcrypt('password'),
+            ],
+            [
+                'name' => 'Antonino Cannavacciuolo',
+                'email' => 'trcaffeleone@boolivero.com',
+                'password' => bcrypt('password'),
+            ],
+            [
+                'name' => 'Alessandro Borghese',
+                'email' => 'stupisci@boolivero.com',
+                'password' => bcrypt('password'),
+            ],
+            [
+                'name' => 'Bruno Barbieri',
+                'email' => 'ramesushi@boolivero.com',
+                'password' => bcrypt('password'),
             ],
         ];
+
+        // seed db in order
         foreach ($new_users as $new_user) {
             $new_profile_user = new User();
+
             $new_profile_user->name = $new_user['name'];
             $new_profile_user->email = $new_user['email'];
             $new_profile_user->password = $new_user['password'];

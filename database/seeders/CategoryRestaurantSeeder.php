@@ -19,7 +19,7 @@ class CategoryRestaurantSeeder extends Seeder
         $category_ids = Category::pluck('id')->toArray();
         $restaurant_ids = Restaurant::pluck('id')->toArray();
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 20; $i++) {
             DB::table('category_restaurant')->insert([
                 'category_id' => Arr::random($category_ids),
                 'restaurant_id' => Arr::random($restaurant_ids)
