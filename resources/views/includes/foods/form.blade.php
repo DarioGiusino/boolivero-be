@@ -74,8 +74,7 @@
       <label for="preview" class="form-label">Preview immagine</label>
       <div class="preview-box d-flex justify-content-center">
         <img id="preview" class="img-fluid d-block"
-          src="{{ $food->image ? asset("storage/$food->image") : 'https://marcolanci.it/utils/placeholder.jpg' }}"
-          alt="{{ $food->label }}">
+          src="{{ $food->image ?? 'https://marcolanci.it/utils/placeholder.jpg' }}" alt="{{ $food->label }}">
       </div>
     </div>
   </div>

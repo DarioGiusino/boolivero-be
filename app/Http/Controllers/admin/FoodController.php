@@ -110,6 +110,8 @@ class FoodController extends Controller
             return to_route('admin.foods.index')->with('message', "Accesso non consentito a $food->label")->with('type', 'info');
         }
 
+        $food->image = str_starts_with($food->image, 'http') ? $food->image : asset('storage/' . $food->image);
+
         return view('admin.foods.edit', compact('food'));
     }
 
