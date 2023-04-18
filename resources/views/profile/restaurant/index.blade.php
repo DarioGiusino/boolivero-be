@@ -3,7 +3,7 @@
   <div class="container">
     <section>
       <header>
-        <h2 class="text-lg font-medium text-gray-900">Profile Restaurant</h2>
+        <h2 class="text-lg font-medium text-gray-900 my-4">Profile Restaurant</h2>
       </header>
       <div class="card p-4 mb-4 bg-white shadow rounded-lg">
 
