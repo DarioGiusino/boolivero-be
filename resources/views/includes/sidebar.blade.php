@@ -13,7 +13,7 @@
     </li>
     <li class="ms-xl-4 my-xl-3">
       <a href="{{ route('admin.restaurants.index') }}">
-        <i class="fa-solid fa-burger"></i>
+        <i class="fa-solid fa-utensils"></i>
         <span>Ristorante</span>
       </a>
     </li>
