@@ -19,11 +19,100 @@ class CategoryRestaurantSeeder extends Seeder
         $category_ids = Category::pluck('id')->toArray();
         $restaurant_ids = Restaurant::pluck('id')->toArray();
 
-        for ($i = 0; $i < 20; $i++) {
-            DB::table('category_restaurant')->insert([
-                'category_id' => Arr::random($category_ids),
-                'restaurant_id' => Arr::random($restaurant_ids)
-            ]);
-        }
+        // restaurant #1
+        DB::table('category_restaurant')->insert([
+            'category_id' => $category_ids[0],
+            'restaurant_id' => $restaurant_ids[0],
+        ]);
+        DB::table('category_restaurant')->insert([
+            'category_id' => $category_ids[3],
+            'restaurant_id' => $restaurant_ids[0],
+        ]);
+        DB::table('category_restaurant')->insert([
+            'category_id' => $category_ids[4],
+            'restaurant_id' => $restaurant_ids[0],
+        ]);
+
+        // restaurant #2
+        DB::table('category_restaurant')->insert([
+            'category_id' => $category_ids[0],
+            'restaurant_id' => $restaurant_ids[1],
+        ]);
+        DB::table('category_restaurant')->insert([
+            'category_id' => $category_ids[1],
+            'restaurant_id' => $restaurant_ids[1],
+        ]);
+
+        // restaurant #3
+        DB::table('category_restaurant')->insert([
+            'category_id' => $category_ids[0],
+            'restaurant_id' => $restaurant_ids[2],
+        ]);
+        DB::table('category_restaurant')->insert([
+            'category_id' => $category_ids[2],
+            'restaurant_id' => $restaurant_ids[2],
+        ]);
+
+        // restaurant #4
+        DB::table('category_restaurant')->insert([
+            'category_id' => $category_ids[0],
+            'restaurant_id' => $restaurant_ids[3],
+        ]);
+
+        // restaurant #5
+        DB::table('category_restaurant')->insert([
+            'category_id' => $category_ids[0],
+            'restaurant_id' => $restaurant_ids[4],
+        ]);
+        DB::table('category_restaurant')->insert([
+            'category_id' => $category_ids[3],
+            'restaurant_id' => $restaurant_ids[4],
+        ]);
+
+        // restaurant #6
+        DB::table('category_restaurant')->insert([
+            'category_id' => $category_ids[0],
+            'restaurant_id' => $restaurant_ids[5],
+        ]);
+        DB::table('category_restaurant')->insert([
+            'category_id' => $category_ids[1],
+            'restaurant_id' => $restaurant_ids[5],
+        ]);
+
+        // restaurant #7
+        DB::table('category_restaurant')->insert([
+            'category_id' => $category_ids[0],
+            'restaurant_id' => $restaurant_ids[6],
+        ]);
+        DB::table('category_restaurant')->insert([
+            'category_id' => $category_ids[4],
+            'restaurant_id' => $restaurant_ids[6],
+        ]);
+
+        // restaurant #8
+        DB::table('category_restaurant')->insert([
+            'category_id' => $category_ids[1],
+            'restaurant_id' => $restaurant_ids[7],
+        ]);
+        DB::table('category_restaurant')->insert([
+            'category_id' => $category_ids[2],
+            'restaurant_id' => $restaurant_ids[7],
+        ]);
+
+        // restaurant #9
+        DB::table('category_restaurant')->insert([
+            'category_id' => $category_ids[3],
+            'restaurant_id' => $restaurant_ids[8],
+        ]);
+        DB::table('category_restaurant')->insert([
+            'category_id' => $category_ids[4],
+            'restaurant_id' => $restaurant_ids[8],
+        ]);
+
+        // restaurant #10
+        DB::table('category_restaurant')->insert([
+            'category_id' => $category_ids[4],
+            'restaurant_id' => $restaurant_ids[9],
+        ]);
     }
 }
