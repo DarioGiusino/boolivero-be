@@ -73,7 +73,7 @@
         </div>
       @empty
         {{-- if there is no foods to display --}}
-        <h2 class="text-center">There is no foods here</h2>
+        <h2 class="text-center">There are no foods here</h2>
       @endforelse
     </div>
 
@@ -203,7 +203,7 @@
           </tr>
         @empty
           {{-- if there is no foods to display --}}
-          <h2 class="text-center">There is no foods here</h2>
+          <h2 class="text-center">There are no foods here</h2>
         @endforelse
       </tbody>
     </table>

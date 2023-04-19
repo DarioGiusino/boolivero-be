@@ -79,7 +79,11 @@
 
                     {{-- restaurant_image --}}
                     <figure class="nav-restaurant-banner ms-2">
-                      <img src="{{ Auth::user()->restaurant->banner }}" alt="user-image">
+                      @if (str_starts_with(Auth::user()->restaurant->banner, 'http'))
+                        <img src="{{ Auth::user()->restaurant->banner }}" alt="user-image">
+                      @else
+                        <img src="{{ asset('storage/' . Auth::user()->restaurant->banner) }}" alt="user-image">
+                      @endif
                     </figure>
                   </div>
                 @endauth
