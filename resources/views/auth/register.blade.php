@@ -141,7 +141,7 @@
                 </div>
               </div>
 
-              <div class="mb-4 row">
+              {{-- <div class="mb-4 row">
                 <label for="vote" class="col-md-4 col-form-label text-md-right">{{ __('Voto') }}</label>
 
                 <div class="col-md-6">
@@ -155,7 +155,7 @@
                     </span>
                   @enderror
                 </div>
-              </div>
+              </div> --}}
 
               <div class="mb-4 row">
                 <label for="category" class="col-md-4 col-form-label text-md-right">{{ __('Categoria') }}</label>

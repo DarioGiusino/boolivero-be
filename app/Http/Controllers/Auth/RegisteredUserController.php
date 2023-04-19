@@ -45,7 +45,6 @@ class RegisteredUserController extends Controller
                 'address' => 'required|string|max:100',
                 'p_iva' => 'string',
                 'banner' => 'nullable|image|mimes:png,jpeg,jpg',
-                'vote' => 'numeric',
                 'categories' => 'nullable|exists:categories,id',
             ],
             [
@@ -58,7 +57,6 @@ class RegisteredUserController extends Controller
                 'p_iva.string' => 'La partita Iva deve essere alfanumerica e non può essere vuota.',
                 'banner.image' => 'Inserisci un file di tipo immagine.',
                 'banner.mimes' => 'Sono supportati solo jpeg, jpg and png.',
-                'vote.numeric' => 'Il prezzo deve essere numerico.',
                 'categories' => 'Le categorie selezionate non sono valide.'
             ]
         );
@@ -72,6 +70,7 @@ class RegisteredUserController extends Controller
 
         $data = $request->all();
 
+        $data['vote'] = 5;
 
         // create a new restaurant
         $restaurant = new Restaurant();
