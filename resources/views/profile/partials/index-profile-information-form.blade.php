@@ -1,6 +1,6 @@
 <section>
     <header>
-        <h2 class="text-lg font-medium text-gray-900">Profile Information</h2>
+        <h2 class="text-lg font-medium text-gray-900">Informazioni Profilo</h2>
     </header>
         <div class="mb-2">
             <label for="name">{{__('Name')}}</label>
