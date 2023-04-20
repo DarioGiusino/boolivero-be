@@ -29,7 +29,7 @@
   @vite(['resources/js/app.js'])
 </head>
 
-<body>
+<body style="visibility: hidden">
   <div id="app">
     {{-- include navbar --}}
     @include('includes.navbar')
